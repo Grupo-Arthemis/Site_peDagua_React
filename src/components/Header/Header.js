@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Logo from "../../assets/logo.png";
 import MenuHamburguer from "../../assets/menu-hamburguer.png";
 import UserIcon from "../../assets/user-icon.svg";
+import '../Padrao/padrao.css';
 import './Header.css';
 
 function Header() {
