@@ -1,98 +1,172 @@
 import React from 'react';
-import '../Padrao/padrao.css';
-import './Footer.css';
+import styled from 'styled-components';
+
+const FooterContainer = styled.footer`
+  width: 100%;
+  background-color: #034C5C;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2vw 0 0 0;
+  flex-direction: column;
+  align-items: center;
+  color: aliceblue;
+  gap: 2vw;
+
+`;
+
+const FooterTextos = styled.div`
+display: flex;
+padding: 0 2vw;
+align-items: flex-start;
+justify-content: space-between;
+align-self: stretch;
+gap: 6vw;
+  }
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 10vw;
+    padding: 0 6vw;
+  }
+`;
+
+const FooterTextosColuna = styled.ul`
+display: flex;
+height: 100%;
+width: 100%;
+flex-direction: column;
+align-items: flex-start;
+  }
+`;
+
+const FooterTextosTitulo = styled.h1`
+color: #FFF;
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: Megrim;
+font-size: clamp(2.5rem, 2.384rem + 0.617vw, 3.125rem);
+font-style: normal;
+font-weight: 500;
+line-height: normal; 
+  }
+`;
+
+const FooterTextosSubTitulo = styled.h1`
+color: #FFF;
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: DM Sans;
+font-size: clamp(0.938rem, 0.822rem + 0.617vw, 1.563rem);
+font-style: normal;
+font-weight: 400;
+line-height: normal; 
+  }
+`;
+
+const FooterTextosIcones = styled.a`
+  margin-right: 1vw;
+  font-size: clamp(1.25rem, 1.134rem + 0.617vw, 1.875rem);
+  }
+`;
+
+const FooterTextosTopicos = styled.li`
+  color: #FFF;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  /* Text single/200/Regular */
+  font-family: DM Sans;
+  font-size: clamp(0.938rem, 0.903rem + 0.185vw, 1.125rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 1.2vw;
+  cursor: pointer;
+  }
+`;
+
+const FooterTextosTopicosTitulo = styled.h3`
+  color: #FFF;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  font-family: DM Sans;
+  font-size: clamp(0.938rem, 0.88rem + 0.309vw, 1.25rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  }
+`;
+
+const FooterBottom = styled.div`
+border-top: 1px solid #F7F6FF;
+width: 100%;
+ }
+`;
+
+const FooterBottomCopyright = styled.div`
+color: #F7F6FF;
+text-align: center;
+font-feature-settings: 'clig' off, 'liga' off;
+
+font-family: DM Sans;
+font-size: clamp(0.938rem, 0.88rem + 0.309vw, 1.25rem);
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+width: 100%;
+padding: 2vw 0;
+ }
+`;
 
 function Footer() {
   return (
-    <footer>
-      <div className="footer__textos">
-        <ul className="footer__textos__logo">
+    <FooterContainer>
+      <FooterTextos>
+        <FooterTextosColuna>
           <li>
-            <h1>pé d’água</h1>
+            <FooterTextosTitulo>pé d’água</FooterTextosTitulo>
           </li>
           <li>
-            <h2>Um sistema de alerta e monitoramento de enchentes</h2>
+            <FooterTextosSubTitulo>Um sistema de alerta e monitoramento de enchentes</FooterTextosSubTitulo>
           </li>
           <li>
-            <div className="footer__textos__logo__redes">
-              <a href="#">
-                <i className="fab fa-facebook"></i>
-              </a>
-              <a href="#">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#">
-                <i className="fab fa-youtube"></i>
-              </a>
-              <a href="#">
-                <i className="fab fa-instagram"></i>
-              </a>
+            <div>
+              <FooterTextosIcones href="#"><i className="fab fa-facebook"></i></FooterTextosIcones>
+              <FooterTextosIcones href="#"><i className="fab fa-twitter"></i></FooterTextosIcones>
+              <FooterTextosIcones href="#"><i className="fab fa-youtube"></i></FooterTextosIcones>
+              <FooterTextosIcones href="#"><i className="fab fa-instagram"></i></FooterTextosIcones>
             </div>
           </li>
-        </ul>
-        <ul className="footer__textos__emergencia">
-          <li>
-            <h3>Emergência</h3>
-          </li>
-          <li>
-            <a href="#">polícia - 190</a>
-          </li>
-          <li>
-            <a href="#">Bombeiros - 193</a>
-          </li>
-          <li>
-            <a href="#">SAMU - 192</a>
-          </li>
-          <li>
-            <a href="#">Disque Denuncia - 181</a>
-          </li>
-          <li>
-            <a href="#">Defesa Civial - 199</a>
-          </li>
-        </ul>
-        <ul className="footer__textos__sobre">
-          <li>
-            <h3>Sobre</h3>
-          </li>
-          <li>
-            <a href="#">Sobre o projeto</a>
-          </li>
-          <li>
-            <a href="#">Sobre nós</a>
-          </li>
-          <li>
-            <a href="#">Perguntas frequentes</a>
-          </li>
-          <li>
-            <a href="#">Galeria</a>
-          </li>
-        </ul>
-        <ul className="footer__textos__parceiros">
-          <li>
-            <h3>IBM</h3>
-          </li>
-          <li>
-            <a href="#">Heinz</a>
-          </li>
-          <li>
-            <a href="#">Food for All</a>
-          </li>
-          <li>
-            <a href="#">Clima Tempo</a>
-          </li>
-          <li>
-            <a href="#">Vinheria Rochedo</a>
-          </li>
-        </ul>
-      </div>
-      <div className="footer__divisoria"></div>
-      <div className="footer__bottom">
-        <h3>
+        </FooterTextosColuna>
+        <FooterTextosColuna>
+          <FooterTextosTopicos><FooterTextosTopicosTitulo>Sobre</FooterTextosTopicosTitulo></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Sobre o projeto</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Sobre nós</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Perguntas frequentes</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Galeria</a></FooterTextosTopicos>
+        </FooterTextosColuna>
+        <FooterTextosColuna>
+          <FooterTextosTopicos><FooterTextosTopicosTitulo>Sobre</FooterTextosTopicosTitulo></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Sobre o projeto</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Sobre nós</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Perguntas frequentes</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Galeria</a></FooterTextosTopicos>
+        </FooterTextosColuna>
+        <FooterTextosColuna>
+          <FooterTextosTopicos><FooterTextosTopicosTitulo>Sobre</FooterTextosTopicosTitulo></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Sobre o projeto</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Sobre nós</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Perguntas frequentes</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Galeria</a></FooterTextosTopicos>
+        </FooterTextosColuna>
+      </FooterTextos>
+      <FooterBottom>
+        <FooterBottomCopyright>
           Copyright © 2023 Pé d´água | All Rights Reserved | Terms and
           Conditions | Privacy Policy
-        </h3>
-      </div>
-    </footer>
+        </FooterBottomCopyright>
+      </FooterBottom>
+    </FooterContainer>
   );
 }
 

@@ -26,7 +26,7 @@ function Header() {
         </div>
         <nav className='header__menu'>
           <ul className='header__menu__lista'>
-            <li><a href='#' className='ativo'>Home</a></li>
+            <li><a href='/home' className='ativo'>Home</a></li>
             <li><a href='#'>Consulta</a></li>
             <li><a href='#'>Galeria</a></li>
             <li id='menuSobre'>
@@ -34,7 +34,7 @@ function Header() {
               <ul className={`header__menu__lista__sobre ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}>
                 <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Projeto</a></li>
                 <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Grupo</a></li>
-                <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</a></li>
+                <li><a href='/perguntas'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</a></li>
                 <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</a></li> 
               </ul>
             </li>
@@ -56,7 +56,7 @@ function Header() {
           />
           <nav className={`header__menu ${isMenuExpanded ? 'header__menu__expandir' : ''}`}>
             <ul className='header__menu__lista'>
-              <li><a href='#' className='ativo'>Home</a></li>
+              <li><a href='/home' className='ativo'>Home</a></li>
               <li><a href='#'>Consulta</a></li>
               <li><a href='#'>Galeria</a></li>
               <li id='menuSobre'>
@@ -64,7 +64,7 @@ function Header() {
                 <ul className={`header__menu__lista__sobre ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}>
                   <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Projeto</a></li>
                   <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Grupo</a></li>
-                  <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</a></li>
+                  <li><a href='/perguntas'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</a></li>
                   <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</a></li> 
                 </ul>
               </li>
