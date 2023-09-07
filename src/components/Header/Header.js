@@ -33,7 +33,7 @@ function Header() {
               <a href='#' onClick={handleSobreClick}>Sobre <i className={`fas fa-angle-down ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}></i></a>
               <ul className={`header__menu__lista__sobre ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}>
                 <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Projeto</a></li>
-                <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Grupo</a></li>
+                <li><a href='/grupo'>&nbsp; <i className='fas fa-angle-right'></i> Grupo</a></li>
                 <li><a href='/perguntas'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</a></li>
                 <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</a></li> 
               </ul>

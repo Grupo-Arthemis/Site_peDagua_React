@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 
 import Home from './components/Home/Home';
 import Perguntas from './components/Perguntas/Perguntas'; 
+import Grupo from './components/Grupo/Grupo';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Switch>
         <Route exact path="/home" component={Home} />
         <Route path="/perguntas" component={Perguntas} />
+        <Route path="/grupo" component={Grupo} />
       </Switch>
     <Footer />
     </Router>
