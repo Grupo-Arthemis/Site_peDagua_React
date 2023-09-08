@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Logo from "../../assets/logo.png";
 import MenuHamburguer from "../../assets/menu-hamburguer.png";
+import { Link } from 'react-router-dom';
 import UserIcon from "../../assets/user-icon.svg";
 import '../Padrao/padrao.css';
 import './Header.css';
@@ -26,16 +27,16 @@ function Header() {
         </div>
         <nav className='header__menu'>
           <ul className='header__menu__lista'>
-            <li><a href='/home' className='ativo'>Home</a></li>
-            <li><a href='#'>Consulta</a></li>
-            <li><a href='#'>Galeria</a></li>
+            <li><Link to="/" className='ativo'>Home</Link></li>
+            <li><Link to='#'>Consulta</Link></li>
+            <li><Link to='#'>Galeria</Link></li>
             <li id='menuSobre'>
-              <a href='#' onClick={handleSobreClick}>Sobre <i className={`fas fa-angle-down ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}></i></a>
+              <a onClick={handleSobreClick} style={{cursor: "pointer"}}>Sobre <i className={`fas fa-angle-down ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}></i></a>
               <ul className={`header__menu__lista__sobre ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}>
-                <li><a href='/projeto'>&nbsp; <i className='fas fa-angle-right'></i> Projeto</a></li>
-                <li><a href='/grupo'>&nbsp; <i className='fas fa-angle-right'></i> Grupo</a></li>
-                <li><a href='/perguntas'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</a></li>
-                <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</a></li> 
+                <li><Link to='/projeto'>&nbsp; <i className='fas fa-angle-right'></i> Projeto</Link></li>
+                <li><Link to='/grupo'>&nbsp; <i className='fas fa-angle-right'></i> Grupo</Link></li>
+                <li><Link to='/perguntas'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</Link></li>
+                <li><Link to='#'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</Link></li> 
               </ul>
             </li>
           </ul>
@@ -56,16 +57,16 @@ function Header() {
           />
           <nav className={`header__menu ${isMenuExpanded ? 'header__menu__expandir' : ''}`}>
             <ul className='header__menu__lista'>
-              <li><a href='/home' className='ativo'>Home</a></li>
-              <li><a href='#'>Consulta</a></li>
-              <li><a href='#'>Galeria</a></li>
+              <li><Link to="/" className='ativo'>Home</Link></li>
+              <li><Link to='#'>Consulta</Link></li>
+              <li><Link to='#'>Galeria</Link></li>
               <li id='menuSobre'>
-                <a href='#' onClick={handleSobreClick}>Sobre <i className={`fas fa-angle-down ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}></i></a>
+                <a onClick={handleSobreClick} style={{cursor: "pointer"}}>Sobre <i className={`fas fa-angle-down ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}></i></a>
                 <ul className={`header__menu__lista__sobre ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}>
-                  <li><a href='/projeto'>&nbsp; <i className='fas fa-angle-right'></i> Projeto</a></li>
-                  <li><a href='/grupo'>&nbsp; <i className='fas fa-angle-right'></i> Grupo</a></li>
-                  <li><a href='/perguntas'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</a></li>
-                  <li><a href='#'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</a></li> 
+                  <li><Link to='/projeto'>&nbsp; <i className='fas fa-angle-right'></i> Projeto</Link></li>
+                  <li><Link to='/grupo'>&nbsp; <i className='fas fa-angle-right'></i> Grupo</Link></li>
+                  <li><Link to='/perguntas'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</Link></li>
+                  <li><Link to='#'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</Link></li> 
                 </ul>
               </li>
             </ul>
