@@ -57,9 +57,19 @@ function Perguntas() {
           },
           {
             Titulo: 'As informações fornecidas são confiáveis?',
-            SubTitulo: 'Esta é a resposta para a pergunta 2.',
-            Conteudo: 'Esta é a resposta para a pergunta 2.'
-          }
+            SubTitulo: 'De onde vêm os dados:',
+            Conteudo: 'Sim, nossa equipe se empenha em coletar e fornecer informações precisas e confiáveis. Trabalhamos com fontes confiáveis de dados e atualizamos constantemente nossas informações para garantir a precisão.'
+          },
+          {
+            Titulo: "Como posso contribuir com o Pé d'Água?",
+            SubTitulo: 'Compartilhe suas observações:',
+            Conteudo: 'Agradecemos pelo interesse em contribuir! Você pode compartilhar suas próprias observações e relatos sobre enchentes em sua região. Essas contribuições podem ajudar a melhorar nossa compreensão das condições locais.'
+          },
+          {
+            Titulo: "O serviço do Pé d'Água é gratuito?",
+            SubTitulo: 'Recursos gratuitos:',
+            Conteudo: 'Sim, muitos dos nossos recursos e informações são gratuitos para os usuários. No entanto, também oferecemos opções premium com recursos adicionais para aqueles que buscam informações mais avançadas e personalizadas.'
+          },
         ];
 
     return (

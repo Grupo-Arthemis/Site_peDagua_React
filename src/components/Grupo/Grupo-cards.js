@@ -5,9 +5,6 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-import asda from '../../assets/nossasFotos/Felipe.png'
-
-
 const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -20,6 +17,13 @@ const CardContainer = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     justify-content: space-evenly;
     padding: 3% 0 5% 0;
+
+
+    @media (max-width: 600px) {
+        width: 90%;
+        height: 420px;
+        margin-bottom: 7%;
+    }
 `
 
 const CardNome = styled.h2`
@@ -28,10 +32,10 @@ const CardNome = styled.h2`
     font-feature-settings: 'clig' off, 'liga' off;
 
     font-family: DM Sans;
-    font-size: 28px;
+    font-size: clamp(1.25rem, 1.023rem + 0.606vw, 1.75rem);
     font-style: normal;
     font-weight: 700;
-    line-height: 38px; 
+    line-height: normal; 
 `
 
 const CardIdade = styled.h3`
@@ -40,7 +44,7 @@ const CardIdade = styled.h3`
     font-feature-settings: 'clig' off, 'liga' off;
 
     font-family: DM Sans;
-    font-size: 18px;
+    font-size: clamp(0.875rem, 0.761rem + 0.303vw, 1.125rem);
     font-style: normal;
     font-weight: 700;
     line-height: 20px; 
@@ -54,10 +58,10 @@ const CardDescricao = styled.p`
     font-feature-settings: 'clig' off, 'liga' off;
 
     font-family: DM Sans;
-    font-size: 18px;
+    font-size: clamp(0.875rem, 0.761rem + 0.303vw, 1.125rem);
     font-style: normal;
     font-weight: 400;
-    line-height: 30px;
+    line-height: normal;
 
     width: 90%;
 `

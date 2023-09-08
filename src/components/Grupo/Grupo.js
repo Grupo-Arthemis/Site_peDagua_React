@@ -51,7 +51,7 @@ const GrupSection01Cards = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 80%;
+  width: 90%;
   gap: 2vw;
 `;
 
