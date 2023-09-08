@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Site_peDagua_React/static/css/main.346a9e74.css",
-    "main.js": "/Site_peDagua_React/static/js/main.f76f9032.js",
+    "main.js": "/Site_peDagua_React/static/js/main.d7c5526a.js",
     "static/js/787.cfdb8f9f.chunk.js": "/Site_peDagua_React/static/js/787.cfdb8f9f.chunk.js",
     "static/media/Projeto-AreaAlagada.png": "/Site_peDagua_React/static/media/Projeto-AreaAlagada.a6032b01f26363c7672a.png",
     "static/media/fundo-section-1.jpg": "/Site_peDagua_React/static/media/fundo-section-1.1c01c52c11c0b651b6c9.jpg",
@@ -18,11 +18,11 @@
     "index.html": "/Site_peDagua_React/index.html",
     "static/media/user-icon.svg": "/Site_peDagua_React/static/media/user-icon.1d78969303b6358f5bef1a2ecda07d2b.svg",
     "main.346a9e74.css.map": "/Site_peDagua_React/static/css/main.346a9e74.css.map",
-    "main.f76f9032.js.map": "/Site_peDagua_React/static/js/main.f76f9032.js.map",
+    "main.d7c5526a.js.map": "/Site_peDagua_React/static/js/main.d7c5526a.js.map",
     "787.cfdb8f9f.chunk.js.map": "/Site_peDagua_React/static/js/787.cfdb8f9f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.346a9e74.css",
-    "static/js/main.f76f9032.js"
+    "static/js/main.d7c5526a.js"
   ]
 }
