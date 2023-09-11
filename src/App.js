@@ -9,6 +9,9 @@ import Home from './components/Home/Home';
 import Projeto from './components/Projeto/Projeto';
 import Perguntas from './components/Perguntas/Perguntas'; 
 import Grupo from './components/Grupo/Grupo';
+import Contatos from './components/Contatos/Contatos';
+import Login from './components/LoginCadastro/Login';
+import Cadastro from './components/LoginCadastro/Cadastro';
 
 const hashHistory = createHashHistory();
 
@@ -21,6 +24,9 @@ function App() {
         <Route path="/projeto" component={Projeto} />
         <Route path="/perguntas" component={Perguntas} />
         <Route path="/grupo" component={Grupo} />
+        <Route path="/contatos" component={Contatos} />
+        <Route path="/login" component={Login} />
+        <Route path="/cadastro" component={Cadastro} />
       </Switch>
       <Footer />
     </Router>

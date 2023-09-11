@@ -36,14 +36,14 @@ function Header() {
                 <li><Link to='/projeto'>&nbsp; <i className='fas fa-angle-right'></i> Projeto</Link></li>
                 <li><Link to='/grupo'>&nbsp; <i className='fas fa-angle-right'></i> Grupo</Link></li>
                 <li><Link to='/perguntas'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</Link></li>
-                <li><Link to='#'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</Link></li> 
+                <li><Link to='/contatos'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</Link></li> 
               </ul>
             </li>
           </ul>
         </nav>
         <div className='header__login'>
-          <button className='header__login__login'>Login</button>
-          <button className='header__login__cadastro'>Cadastro</button>
+          <button className='header__login__login'><Link to='/login'>Login</Link> </button>
+          <button className='header__login__cadastro'><Link to='/cadastro'>Cadastro</Link> </button>
         </div>
       </header>
 
@@ -66,7 +66,7 @@ function Header() {
                   <li><Link to='/projeto'>&nbsp; <i className='fas fa-angle-right'></i> Projeto</Link></li>
                   <li><Link to='/grupo'>&nbsp; <i className='fas fa-angle-right'></i> Grupo</Link></li>
                   <li><Link to='/perguntas'>&nbsp; <i className='fas fa-angle-right'></i> Perguntas</Link></li>
-                  <li><Link to='#'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</Link></li> 
+                  <li><Link to='/contatos'>&nbsp; <i className='fas fa-angle-right'></i> Contatos</Link></li> 
                 </ul>
               </li>
             </ul>
@@ -76,7 +76,7 @@ function Header() {
           <h1 className='header__logo__texto'>pé d’água</h1>
         </div>
         <div className='header__login'>
-          <img src={UserIcon} alt='' />
+          <Link to='/login'><img src={UserIcon} alt='' /></Link>
         </div>
       </header>
     </>
