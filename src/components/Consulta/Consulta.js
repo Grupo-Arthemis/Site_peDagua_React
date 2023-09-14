@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import mapaPlaceHolder from '../../assets/mapaFotoPlaceHolder.png';
-import { Wrapper } from "@googlemaps/react-wrapper";
+import MapContainer from './Map';
 
 const PergSection01 = styled.div`
   padding: 5% 2%;
@@ -62,11 +61,11 @@ const PergSection02 = styled.div`
 `;
 
 const PergSection02Mapa = styled.div`
+  position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
     width: 100%;
+    flex-direction: column;
 `;
 
 const PergSection02InteractiveArea = styled.div`
@@ -132,6 +131,7 @@ const PergSection02Card3 = styled.div`
 
 
 function Consulta() {
+  
  
     return (
         <div className="Perguntas">
@@ -145,7 +145,7 @@ function Consulta() {
             </PergSection01>
             <PergSection02>
                 <PergSection02Mapa>
-                    <img src={mapaPlaceHolder} alt="Mapa" width={"100%"} height={"100%"} style={{borderRadius: 10}}/>
+                  <MapContainer/>
                 </PergSection02Mapa>
 
                 <PergSection02InteractiveArea>
