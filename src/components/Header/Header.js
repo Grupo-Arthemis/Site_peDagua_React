@@ -28,7 +28,7 @@ function Header() {
         <nav className='header__menu'>
           <ul className='header__menu__lista'>
             <li><Link to="/" className='ativo'>Home</Link></li>
-            <li><Link to='#'>Consulta</Link></li>
+            <li><Link to='/consulta'>Consulta</Link></li>
             <li><Link to='#'>Galeria</Link></li>
             <li id='menuSobre'>
               <a onClick={handleSobreClick} style={{cursor: "pointer"}}>Sobre <i className={`fas fa-angle-down ${isSobreExpanded ? 'header__menu__lista__sobre__expandir' : ''}`}></i></a>
