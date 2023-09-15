@@ -1,92 +1,101 @@
-import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import React, { useState, useEffect } from 'react';
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
 
-class MapContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      address: '',
-      mapCenter: {
-        lat: null,
-        lng: null,
-      },
-    };
-  }
+const containerStyle = {
+  width: '100%',
+  height: '65vh'
+};
 
-  componentDidMount() {
-    // Verifique se a geolocalização está disponível no navegador
-    if ('geolocation' in navigator) {
-      // Obtenha as coordenadas da localização atual do usuário
-      navigator.geolocation.getCurrentPosition((position) => {
-        const { latitude, longitude } = position.coords;
-        const mapCenter = { lat: latitude, lng: longitude };
+const libraries = ["places"];
 
-        // Atualize o estado com as coordenadas da localização atual
-        this.setState({ mapCenter });
-      });
-    }
-  }
+export default function Home() {
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: "AIzaSyD04y6Ip4Gu5lnlO894XGdf3rOA6BhGxow",
+    libraries,
+  });
 
-  handleAddressChange = (address) => {
-    this.setState({ address });
-  };
+  const [selectedAddress, setSelectedAddress] = useState('');
+  const [mapCenter, setMapCenter] = useState(null);
+  const [markerPosition, setMarkerPosition] = useState(null);
 
-  handleSelect = (selectedAddress) => {
-    this.setState({ address: selectedAddress });
-
-    geocodeByAddress(selectedAddress)
-      .then((results) => getLatLng(results[0]))
-      .then((latLng) => {
-        this.setState({ mapCenter: latLng });
-      })
-      .catch((error) => console.error('Error', error));
-  };
-
-  render() {
-    const { address, mapCenter } = this.state;
-
-    const renderSuggestion = ({ description }) => {
-      const addressParts = description.split(',');
-      const streetName = addressParts[0];
-      const city = addressParts[1];
-      return (
-        <div style={{ padding: '10px', borderBottom: '1px solid #ccc', fontFamily: 'DM Sans', width: '100%' }}>
-          <span style={{ fontWeight: 'bold' }}>{streetName}</span>, {city}
-        </div>
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setMapCenter({ lat: position.coords.latitude, lng: position.coords.longitude });
+          setMarkerPosition({ lat: position.coords.latitude, lng: position.coords.longitude });
+        },
+        (error) => {
+          console.error('Error getting current position', error);
+        }
       );
-    };
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
+  }, []);
 
+  const handleAddressChange = (address) => {
+    setSelectedAddress(address);
+  };
+
+  const handleSelect = async (address) => {
+    setSelectedAddress(address);
+    try {
+      const results = await geocodeByAddress(address);
+      const latLng = await getLatLng(results[0]);
+      setMapCenter(latLng);
+      setMarkerPosition(latLng);
+    } catch (error) {
+      console.error('Error', error);
+    }
+  };
+
+  const renderSuggestion = ({ description }) => {
+    const addressParts = description.split(',');
+    const streetName = addressParts[0];
+    const city = addressParts[1];
     return (
-      <div style={{ position: 'relative', height: '75vh' }}>
-        <PlacesAutocomplete
-          value={address}
-          onChange={this.handleAddressChange}
-          onSelect={this.handleSelect}
-          renderSuggestion={renderSuggestion}
-        >
-          {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-            <div style={{ position: 'relative' }}>
-              <input
-                {...getInputProps({
-                  placeholder: 'Digite um endereço...',
-                  className: 'location-search-input',
-                  style: {
-                    height: '8vh',
-                    border: 'none',
-                    marginBottom: '2vh',
-                    width: '90%',
-                    backgroundColor: '#EDF2F7',
-                    borderRadius: '20px',
-                    fontSize: '16px',
-                    padding: '0 5%',
-                    fontFamily: "DM Sans"
-                  },
-                })}
-              />  
+      <div style={{ padding: '10px', borderBottom: '1px solid #ccc', fontFamily: 'DM Sans', width: '100%' }}>
+        <span style={{ fontWeight: 'bold' }}>{streetName}</span>, {city}
+      </div>
+    );
+  };
+
+  if (loadError) return <div>Error loading maps</div>;
+  if (!isLoaded) return <div>Loading...</div>;
+
+  return (
+    <div style={{  height: '100%' }}>
+      <PlacesAutocomplete
+        value={selectedAddress}
+        onChange={handleAddressChange}
+        onSelect={handleSelect}
+        renderSuggestion={renderSuggestion}
+        style={{ width: '100%', height: '100%' }}
+      >
+        {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+          <div style={{ position: 'relative' }}>
+            <input
+              {...getInputProps({
+                placeholder: 'Digite seu endereço...',
+                className: 'location-search-input',
+                style: {
+                  height: '8vh',
+                  border: 'none',
+                  marginBottom: '2vh',
+                  width: '90%',
+                  backgroundColor: '#EDF2F7',
+                  borderRadius: '20px',
+                  fontSize: '16px',
+                  padding: '0 5%',
+                  fontFamily: "DM Sans"
+                },
+              })}
+            />
               <div
                 className="autocomplete-dropdown-container"
                 style={{ position: 'absolute', zIndex: 1, backgroundColor: '#fff', width: '100%', fontSize: '16px' }}
@@ -109,20 +118,10 @@ class MapContainer extends Component {
               </div>
             </div>
           )}
-        </PlacesAutocomplete>
-        <Map
-          google={this.props.google}
-          zoom={14}
-          center={mapCenter}
-          style={{ width: '100%', height: '65vh', position: 'absolute'}}
-        >
-          <Marker position={mapCenter} />
-        </Map>
-      </div>
-    );
-  }
+      </PlacesAutocomplete>
+      <GoogleMap mapContainerStyle={containerStyle} zoom={17} center={mapCenter}>
+        {markerPosition && <Marker position={markerPosition} />}
+      </GoogleMap>
+    </div>
+  );
 }
-
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyD04y6Ip4Gu5lnlO894XGdf3rOA6BhGxow',
-})(MapContainer);

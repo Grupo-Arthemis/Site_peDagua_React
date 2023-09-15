@@ -140,8 +140,7 @@ function Consulta() {
                 </PergSection01Texto>
             </PergSection01>
             <PergSection02>
-                <MapContainer/>
-
+                <MapContainer styled={{width:"500px"}}/>
                 <PergSection02InteractiveArea>
                     <PergSection02CardContainer>
 
