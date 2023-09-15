@@ -49,23 +49,48 @@ class MapContainer extends Component {
   render() {
     const { address, mapCenter } = this.state;
 
+    const renderSuggestion = ({ description }) => {
+      const addressParts = description.split(',');
+      const streetName = addressParts[0];
+      const city = addressParts[1];
+      return (
+        <div style={{ padding: '10px', borderBottom: '1px solid #ccc', fontFamily: 'DM Sans', width: '100%' }}>
+          <span style={{ fontWeight: 'bold' }}>{streetName}</span>, {city}
+        </div>
+      );
+    };
+
     return (
-      <div style={{height:"max-content"}}>
+      <div style={{ position: 'relative', height: '75vh' }}>
         <PlacesAutocomplete
           value={address}
           onChange={this.handleAddressChange}
           onSelect={this.handleSelect}
+          renderSuggestion={renderSuggestion}
         >
           {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-            <div>
+            <div style={{ position: 'relative' }}>
               <input
                 {...getInputProps({
                   placeholder: 'Digite um endereço...',
                   className: 'location-search-input',
-                  style: { width: "97%", height: '5vh', borderRadius: 10, border: "1px solid #9795b5"},
+                  style: {
+                    height: '8vh',
+                    border: 'none',
+                    marginBottom: '2vh',
+                    width: '90%',
+                    backgroundColor: '#EDF2F7',
+                    borderRadius: '20px',
+                    fontSize: '16px',
+                    padding: '0 5%',
+                    fontFamily: "DM Sans"
+                  },
                 })}
-              />
-              <div className="autocomplete-dropdown-container">
+              />  
+              <div
+                className="autocomplete-dropdown-container"
+                style={{ position: 'absolute', zIndex: 1, backgroundColor: '#fff', width: '100%', fontSize: '16px' }}
+              >
                 {loading && <div>Carregando...</div>}
                 {suggestions.map((suggestion) => {
                   const className = suggestion.active
@@ -77,7 +102,7 @@ class MapContainer extends Component {
                         className,
                       })}
                     >
-                      <span>{suggestion.description}</span>
+                      <span style={{ fontFamily: 'DM Sans' }}>{renderSuggestion(suggestion)}</span>
                     </div>
                   );
                 })}
@@ -89,7 +114,7 @@ class MapContainer extends Component {
           google={this.props.google}
           zoom={14}
           center={mapCenter}
-          style={{ width: '95%', height: '80%', borderRadius: 10, border: "1px solid #9795b5", margin: "0 auto", position: "absolute"}}
+          style={{ width: '100%', height: '65vh', position: 'absolute'}}
         >
           <Marker position={mapCenter} />
         </Map>

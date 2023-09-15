@@ -62,10 +62,8 @@ const PergSection02 = styled.div`
 
 const PergSection02Mapa = styled.div`
   position: relative;
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
+  height: 100%;
+  width: 100%;
 `;
 
 const PergSection02InteractiveArea = styled.div`
@@ -140,21 +138,11 @@ function Consulta() {
                     <PergSection01H1>Previsão de clima e alertas de enchentes</PergSection01H1> 
                     <PergSection01P>Obtenha informações climáticas precisas para a sua localização e receba alertas de enchentes em nosso portal de consulta climática. Esteja preparado e mantenha-se seguro.</PergSection01P>
                 </PergSection01Texto>
-                <PergSection01Perguntas>
-                </PergSection01Perguntas>
             </PergSection01>
             <PergSection02>
-                <PergSection02Mapa>
-                  <MapContainer/>
-                </PergSection02Mapa>
+                <MapContainer/>
 
                 <PergSection02InteractiveArea>
-                    <div style={{width: "97%"}} >
-                        <PergSection01P>CEP</PergSection01P>
-                        <input type="text" placeholder="Digite seu CEP" style={{width: "97%", height: "5vh", borderRadius: 10, border: "1px solid #9795b5"}}/>
-                        <PergSection01P>Usar localização Atual</PergSection01P>
-                        <PergSection02InteractiveAreaButton>Consultar localização</PergSection02InteractiveAreaButton>
-                    </div>
                     <PergSection02CardContainer>
 
                       <PergSection02Card1>
