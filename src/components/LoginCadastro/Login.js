@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// Estilos CSS
 const LogCadUserSection = styled.div`
     height: max-content;
     padding: 3vw 12vw;
@@ -28,6 +29,7 @@ const LogCadAreaTroca = styled.div`
     justify-content: space-around;
     height: 100%;
 `;
+
 const LogCadAreaInfo = styled.div`
     background-color: #e8eae8;
     border-radius: 2vw 0 0 2vw;
@@ -38,9 +40,10 @@ const LogCadAreaInfo = styled.div`
     justify-content: space-around;
     height: 100%;
 `;
+
 const LogCadAreaInfoForm = styled.div`
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 `;
 
 const LogCadtitulo = styled.h1`
@@ -81,12 +84,12 @@ const LogCadInput = styled.input`
     font-style: normal;
     font-weight: 500;
     transition: 0.5s;
-    
-    &:focus{
+
+    &:focus {
         border-bottom: 3px solid #4F7784;
     }
 
-    ::placeholder{
+    ::placeholder {
         color: #425466;
         font-family: DM Sans;
         font-size: 20px;
@@ -94,110 +97,6 @@ const LogCadInput = styled.input`
         font-weight: 500;
     }
 `;
-
-
-const Cadastrar = styled.button`
-
-  color: #fff;
-  background-color: #403e61;
-  text-align: center;
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: DM Sans;
-  font-size: clamp(0.813rem, 0.731rem + 0.432vw, 1.25rem);
-  font-style: normal;
-  font-weight: 700;
-  border-radius: 40px;
-  display: flex;
-  padding: 2% 3%;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid #d4d2e3;
-  textalign: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  width: 50%;
-  margin: 0 auto;
-  cursor: pointer;
-  
-
-  &:hover {
-    color: #5d5a88;
-    background-color: #fff;
-  }
-
-  @media (max-width: 600px) {
-    width: 90%; 
-    padding: 5% 3%;
-  }
-`;
-
-const Logar = styled.button`
-    color: #fff;
-    background-color: #403e61;
-  text-align: center;
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: DM Sans;
-  font-size: clamp(0.813rem, 0.731rem + 0.432vw, 1.25rem);
-  font-style: normal;
-  font-weight: 700;
-  border-radius: 40px;
-  display: flex;
-  padding: 2% 3%;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid #d4d2e3;
-  textalign: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  width: 50%;
-  margin: 0 auto;
-  cursor: pointer;
-
-  &:hover {
-    color: #5d5a88;
-    background-color: #fff;
-  }
-
-  @media (max-width: 600px) {
-    width: 90%; 
-    padding: 5% 3%;
-  }
-`;
-
-const AlterarTela = styled.button`
-    color: #fff;    
-    background-color: #403e61;
-  text-align: center;
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: DM Sans;
-  font-size: clamp(0.813rem, 0.731rem + 0.432vw, 1.25rem);
-  font-style: normal;
-  font-weight: 700;
-  border-radius: 40px;
-  display: flex;
-  padding: 2% 3%;
-  align-items: center;
-  gap: 8px;
-  border: none;
-  textalign: center;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  width: 50%;
-  margin: 0 auto;
-  cursor: pointer;
-
-  &:hover {
-    color: #5d5a88;
-    background-color: #fff;
-  }
-
-  @media (max-width: 600px) {
-    width: 90%; 
-    padding: 5% 3%;
-  }
-`;
-
-// -------------------------------------
 const LogCadCardLogin = styled.div`
     display: grid;
     grid-template-columns: 60% 40%;
@@ -205,8 +104,108 @@ const LogCadCardLogin = styled.div`
     height: 100%;
     position: absolute;
 `;
+const Cadastrar = styled.button`
+    color: #fff;
+    background-color: #403e61;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: DM Sans;
+    font-size: clamp(0.813rem, 0.731rem + 0.432vw, 1.25rem);
+    font-style: normal;
+    font-weight: 700;
+    border-radius: 40px;
+    display: flex;
+    padding: 2% 3%;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #d4d2e3;
+    text-align: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    width: 50%;
+    margin: 0 auto;
+    cursor: pointer;
 
+    &:hover {
+        color: #5d5a88;
+        background-color: #fff;
+    }
+
+    @media (max-width: 600px) {
+        width: 90%;
+        padding: 5% 3%;
+    }
+`;
+
+const AlterarTela = styled.button`
+    color: #fff;
+    background-color: #403e61;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: DM Sans;
+    font-size: clamp(0.813rem, 0.731rem + 0.432vw, 1.25rem);
+    font-style: normal;
+    font-weight: 700;
+    border-radius: 40px;
+    display: flex;
+    padding: 2% 3%;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    text-align: center;
+    justify-content: center;
+    transition: all 0.2s ease-in-out;
+    width: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+
+    &:hover {
+        color: #5d5a88;
+        background-color: #fff;
+    }
+
+    @media (max-width: 600px) {
+        width: 90%;
+        padding: 5% 3%;
+    }
+`;
+
+// Componente LoginCard
 function LoginCard() {
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [msgError, setMsgError] = useState('');
+
+    const handleLogin = () => {
+        let listaUser = JSON.parse(localStorage.getItem("listaUser"));
+
+        let usuarioValidado = {
+            email: email,
+            senhaInput: senha,
+        };
+
+        try {
+            listaUser.forEach((usuario) => {
+                if (usuarioValidado.email === usuario.emailUsuario && usuarioValidado.senhaInput === usuario.senhaUsuario) {
+                    usuarioValidado["nomeCompleto"] = usuario.nomeUsuario;
+                    usuarioValidado["cpfCnpj"] = usuario.cpfCnpjUsuario;
+                    throw "VALIDADO!";
+                }
+            });
+
+            throw "Usuário ou senha inválidos!";
+        } catch (msg) {
+            if (msg === "VALIDADO!") {
+                localStorage.setItem("usuario-validado", JSON.stringify(usuarioValidado));
+                setMsgError("Bem vindo!");
+                setTimeout(() => {
+                    window.location.href = "../index.html";
+                }, 3000);
+            } else {
+                setMsgError("Login inválido!");
+            }
+        }
+    };
 
     return (
         <LogCadUserSection>
@@ -218,18 +217,31 @@ function LoginCard() {
                             <LogCadparagrafo id="avisoCadastro">Use seu e-mail e senha cadastrados</LogCadparagrafo>
                         </div>
                         <LogCadAreaInfoForm>
-                            
-                            <LogCadInput type="text" placeholder="Digite seu e-mail" className="icon-placeholder" id="Email" style={{backgroundImage:"url(${FaEnvelope})"}}/>
-                            
-                            <LogCadInput type="password" placeholder="Senha" className="icon-placeholder" id="Senha" />
-                            
+                            <LogCadInput
+                                type="text"
+                                placeholder="Digite seu e-mail"
+                                className="icon-placeholder"
+                                id="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+
+                            <LogCadInput
+                                type="password"
+                                placeholder="Senha"
+                                className="icon-placeholder"
+                                id="Senha"
+                                value={senha}
+                                onChange={(e) => setSenha(e.target.value)}
+                            />
                         </LogCadAreaInfoForm>
-                        <Cadastrar id="BotaoCadastro">Entrar</Cadastrar>            
+                        <Cadastrar onClick={handleLogin}>Entrar</Cadastrar>
+                        <p id="msgError">{msgError}</p>
                     </LogCadAreaInfo>
                     <LogCadAreaTroca>
                         <div>
-                            <LogCadtitulo style={{color:"#fff"}}>Ainda não possui<br/> uma conta ?</LogCadtitulo>
-                            <LogCadparagrafo style={{color:"#fff"}}>Para ficar conectado conosco <br/> insira seus dados</LogCadparagrafo>
+                            <LogCadtitulo style={{ color: "#fff" }}>Ainda não possui<br /> uma conta ?</LogCadtitulo>
+                            <LogCadparagrafo style={{ color: "#fff" }}>Para ficar conectado conosco <br /> insira seus dados</LogCadparagrafo>
                         </div>
                         <Link to='/cadastro'><AlterarTela>Cadastre-se</AlterarTela></Link>
                     </LogCadAreaTroca>
@@ -240,6 +252,3 @@ function LoginCard() {
 }
 
 export default LoginCard;
-
-
-
