@@ -309,7 +309,7 @@ function CadastroCard() {
                     <LogCadAreaTroca>
                         <div>
                             <LogCadtitulo style={{ color: '#fff' }}>Bem Vindo <br /> De Volta!</LogCadtitulo>
-                            <LogCadparagrafo style={{ color: '#fff' }}>Para ficar conectado conosco <br /> insira seus dados</LogCadparagrafo>
+                            <LogCadparagrafo style={{ color: '#fff', textAlign: "justify"  }}> <br />Bem-vindo de volta! É ótimo ver você novamente em nossa comunidade dedicada à segurança contra enchentes. <br /> <br /> Se você já possui uma conta no Pé D'Água, basta fazer login para continuar aproveitando todos os nossos recursos.</LogCadparagrafo>
                         </div>
                         <Link to='/login'><AlterarTela>Entrar</AlterarTela></Link>
                     </LogCadAreaTroca>

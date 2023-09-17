@@ -137,6 +137,7 @@ function Consulta() {
                 <PergSection01Texto>
                     <PergSection01H1>Previsão de clima e alertas de enchentes</PergSection01H1> 
                     <PergSection01P>Obtenha informações climáticas precisas para a sua localização e receba alertas de enchentes em nosso portal de consulta climática. Esteja preparado e mantenha-se seguro.</PergSection01P>
+                    <PergSection01P>Essa pagina está sob manutenção, sua atividade será normalizada a partir do dia 26/09/2023, por enquanto somente a pesquisa de endereço está disponivel!</PergSection01P>
                 </PergSection01Texto>
             </PergSection01>
             <PergSection02>

@@ -13,7 +13,7 @@ import Contatos from './components/Contatos/Contatos';
 import Login from './components/LoginCadastro/Login';
 import Cadastro from './components/LoginCadastro/Cadastro';
 import Consulta from './components/Consulta/Consulta';
-import Galeria from './components/Galeria/Galeria';
+import Apoio from './components/Apoio/Apoio';
 
 const hashHistory = createHashHistory();
 
@@ -30,7 +30,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/cadastro" component={Cadastro} />
         <Route path="/consulta" component={Consulta} />
-        <Route path="/galeria" component={Galeria} />
+        <Route path="/apoio" component={Apoio} />
       </Switch>
       <Footer />
     </Router>

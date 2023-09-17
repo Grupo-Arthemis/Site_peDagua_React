@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import GaleriaCards from './Galeria-cards';
+import ApoioriaCards from './Apoio-cards';
 import React from "react";
 
 import Foto_1 from '../../assets/projetosSociais/Foto (1).jpg';
@@ -13,7 +13,7 @@ import Foto_8 from '../../assets/projetosSociais/Foto (8).jpg';
 import Foto_9 from '../../assets/projetosSociais/Foto (9).jpg';
 import Foto_10 from '../../assets/projetosSociais/Foto (10).jpg';
 
-const GaleSection01 = styled.div`
+const ApoioSection01 = styled.div`
   padding: 5% 2%;
   width: 96%;
   display: flex;
@@ -23,13 +23,13 @@ const GaleSection01 = styled.div`
   gap: 10vh;
 `;
 
-const GaleSection01Texto = styled.div`
+const ApoioSection01Texto = styled.div`
   gap: 2vw;
   display: flex;
   flex-direction: column;
 `;
 
-const GaleSection01H1 = styled.h1`
+const ApoioSection01H1 = styled.h1`
   color: #5d5a88;
   text-align: center;
   font-feature-settings: 'clig' off, 'liga' off;
@@ -40,7 +40,7 @@ const GaleSection01H1 = styled.h1`
   line-height: normal;
 `;
 
-const GaleSection01P = styled.p`
+const ApoioSection01P = styled.p`
   color: #9795b5;
   text-align: center;
   font-feature-settings: 'clig' off, 'liga' off;
@@ -52,7 +52,7 @@ const GaleSection01P = styled.p`
   text-align: justify;
 `;
 
-const GaleSection01Cards = styled.div`
+const ApoioSection01Cards = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -62,7 +62,7 @@ const GaleSection01Cards = styled.div`
 
 
 
-function Galeria() {
+function Apoio() {
 
     const Causas = [
         {
@@ -129,25 +129,25 @@ function Galeria() {
     
     return (
         <div className="Perguntas">
-            <GaleSection01>
-                <GaleSection01Texto>
-                    <GaleSection01H1>Saiba onde apoiar</GaleSection01H1> 
-                    <GaleSection01P>Mesmo durante os momentos dificeis, a luz da esperança não pode ser apagada, saiba como ajudar:</GaleSection01P>
-                </GaleSection01Texto>
-                <GaleSection01Cards>
+            <ApoioSection01>
+                <ApoioSection01Texto>
+                    <ApoioSection01H1>Saiba onde apoiar</ApoioSection01H1> 
+                    <ApoioSection01P>Mesmo durante os momentos dificeis, a luz da esperança não pode ser apagada, saiba como ajudar:</ApoioSection01P>
+                </ApoioSection01Texto>
+                <ApoioSection01Cards>
 
 
                 {Causas.map((Causa, index) => (
-                        <GaleriaCards key={index} Title={Causa.Title} Description={Causa.Description} Image={Causa.Image} Link={Causa.Link} />
+                        <ApoioriaCards key={index} Title={Causa.Title} Description={Causa.Description} Image={Causa.Image} Link={Causa.Link} />
                     ))}
 
-                </GaleSection01Cards>
-            </GaleSection01>
+                </ApoioSection01Cards>
+            </ApoioSection01>
         </div>
     );
 }
 
-export default Galeria;
+export default Apoio;
 
 
 

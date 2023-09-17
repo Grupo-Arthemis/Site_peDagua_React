@@ -132,46 +132,46 @@ function Projeto() {
   const avaliacoes = [
     {
       Rating: 5,
-      Comentario: 'Adorei o site, muito intuitivo e fácil de usar!',
-      Nome: 'Luciano Gimenos',
-      Localizacao: 'Osasco - SP'
+      Comentario: 'Adorei a interface do site! Muito fácil de navegar e encontrar as informações que preciso.',
+      Nome: 'Ana Silva',
+      Localizacao: 'São Paulo - SP'
     },
     {
       Rating: 4,
-      Comentario: '',
-      Nome: 'Fernando Gimenos',
-      Localizacao: 'Osasco - SP'
+      Comentario: 'O site oferece dados precisos e úteis sobre as condições climáticas. Ótima experiência de usuário.',
+      Nome: 'Carlos Oliveira',
+      Localizacao: 'Rio de Janeiro - RJ'
     },
     {
-      Rating: 3,
-      Comentario: '',
-      Nome: 'Maria Gimenos',
+      Rating: 4,
+      Comentario: 'Navegação fluida e informações bem apresentadas. Uma ferramenta essencial para quem busca informações sobre o clima.',
+      Nome: 'Sofia Costa',
+      Localizacao: 'Sumaré - SP'
+    },
+    {
+      Rating: 4,
+      Comentario: 'Excelente site para manter-se informado sobre o clima local. Design atraente e fácil de usar.',
+      Nome: 'Alex Johnson',
       Localizacao: 'Osasco - SP'
     },
     {
       Rating: 5,
-      Comentario: '',
-      Nome: 'Carlos Gimenos',
-      Localizacao: 'Osasco - SP'
-    },
-    {
-      Rating: 4,
-      Comentario: '',
-      Nome: 'Fernando Gimenos',
-      Localizacao: 'Osasco - SP'
-    },
-    {
-      Rating: 3,
-      Comentario: '',
-      Nome: 'Maria Gimenos',
-      Localizacao: 'Osasco - SP'
+      Comentario: 'O site é muito informativo e de fácil compreensão. Gostei especialmente da previsão detalhada. ',
+      Nome: 'Laura Santos',
+      Localizacao: 'São Paulo - SP'
     },
     {
       Rating: 5,
-      Comentario: '',
-      Nome: 'Carlos Gimenos',
-      Localizacao: 'Osasco - SP'
+      Comentario: 'Site com informações fornecidas sobre o clima. Me ajudou muito durante a minha estadia.',
+      Nome: 'Luca Ferrari',
+      Localizacao: 'Manaus - AM'
     },
+    {
+      Rating: 5,
+      Comentario: 'Excelente plataforma para se manter atualizado sobre as condições climáticas locais. Interface amigável e fácil de usar.',
+      Nome: 'Marcos Lima',
+      Localizacao: 'Fortaleza - CE'
+    }
   ];
     
     return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const FooterContainer = styled.footer`
   width: 100%;
@@ -139,25 +140,28 @@ function Footer() {
           </li>
         </FooterTextosColuna>
         <FooterTextosColuna>
-          <FooterTextosTopicos><FooterTextosTopicosTitulo>Sobre</FooterTextosTopicosTitulo></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Sobre o projeto</a></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Sobre nós</a></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Perguntas frequentes</a></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Galeria</a></FooterTextosTopicos>
+          <FooterTextosTopicos><FooterTextosTopicosTitulo>Emergência</FooterTextosTopicosTitulo></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Polícia - 190</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Bombeiros - 193</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">SAMU - 192</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Disque Denuncia - 181</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="#">Defesa Civial - 199</a></FooterTextosTopicos>
         </FooterTextosColuna>
         <FooterTextosColuna>
           <FooterTextosTopicos><FooterTextosTopicosTitulo>Sobre</FooterTextosTopicosTitulo></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Sobre o projeto</a></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Sobre nós</a></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Perguntas frequentes</a></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Galeria</a></FooterTextosTopicos>
+          <FooterTextosTopicos><Link to="/projeto">Sobre o projeto</Link></FooterTextosTopicos>
+          <FooterTextosTopicos><Link to="/grupo">Sobre nós</Link></FooterTextosTopicos>
+          <FooterTextosTopicos><Link to="/perguntas">Perguntas frequentes</Link></FooterTextosTopicos>
+          <FooterTextosTopicos><Link to="/contatos">Contatos</Link></FooterTextosTopicos>
+          <FooterTextosTopicos><Link to="/apoio">Apoio</Link></FooterTextosTopicos>
         </FooterTextosColuna>
         <FooterTextosColuna>
-          <FooterTextosTopicos><FooterTextosTopicosTitulo>Sobre</FooterTextosTopicosTitulo></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Sobre o projeto</a></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Sobre nós</a></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Perguntas frequentes</a></FooterTextosTopicos>
-          <FooterTextosTopicos><a href="#">Galeria</a></FooterTextosTopicos>
+          <FooterTextosTopicos><FooterTextosTopicosTitulo>Parceiros</FooterTextosTopicosTitulo></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="https://www.ibm.com/br-pt">IBM</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="https://www.heinzbrasil.com.br/">Heinz</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="https://grupo-arthemis.github.io/Food_For_All/">Food for All</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="https://www.climatempo.com.br/">Clima Tempo</a></FooterTextosTopicos>
+          <FooterTextosTopicos><a href="https://grupo-arthemis.github.io/Checkpoint_Front_End_4/">Vinheria Rochedo</a></FooterTextosTopicos>
         </FooterTextosColuna>
       </FooterTextos>
       <FooterBottom>

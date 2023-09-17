@@ -264,7 +264,7 @@ function LoginCard() {
                     <LogCadAreaTroca>
                         <div>
                             <LogCadtitulo style={{ color: "#fff" }}>Ainda não possui<br /> uma conta ?</LogCadtitulo>
-                            <LogCadparagrafo style={{ color: "#fff" }}>Para ficar conectado conosco <br /> insira seus dados</LogCadparagrafo>
+                            <LogCadparagrafo style={{ color: "#fff", textAlign: "justify" }}><br />Seja parte de nossa comunidade comprometida em tornar nossas cidades mais seguras e resilientes contra enchentes.  <br /> <br />Ao se cadastrar no Pé D'Água, você terá acesso a recursos exclusivos e informações valiosas sobre alertas e monitoramento de enchentes.</LogCadparagrafo>
                         </div>
                         <Link to='/cadastro'><AlterarTela>Cadastre-se</AlterarTela></Link>
                     </LogCadAreaTroca>
