@@ -9,6 +9,10 @@ const LogCadUserSection = styled.div`
     display: flex;
     height: 160vh;
     justify-content: center;
+
+    @media (max-width: 600px) {
+        padding: 3vw 5vw;
+    }
 `;
 
 const LogCadCard = styled.div`
@@ -17,6 +21,11 @@ const LogCadCard = styled.div`
     width: 90%;
     border-radius: 2vw;
     position: relative;
+
+    @media (max-width: 600px) {
+        height: 70%;
+        width: 100%;
+    }
 `;
 
 const LogCadAreaTroca = styled.div`
@@ -28,6 +37,11 @@ const LogCadAreaTroca = styled.div`
     text-align: center;
     justify-content: space-around;
     height: 100%;
+
+    @media (max-width: 600px) {
+        padding: 0 5%;
+        border-radius: 2vw 2vw 0 0;
+    }
 `;
 
 const LogCadAreaInfo = styled.div`
@@ -39,6 +53,11 @@ const LogCadAreaInfo = styled.div`
     text-align: center;
     justify-content: space-around;
     height: 100%;
+
+    @media (max-width: 600px) {
+        padding: 0 5%;
+        border-radius: 0 0 2vw 2vw;
+    }
 `;
 
 const LogCadAreaInfoForm = styled.div`
@@ -51,7 +70,7 @@ const LogCadtitulo = styled.h1`
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: DM Sans;
-    font-size: 60px;
+    font-size: clamp(2.188rem, 1.477rem + 1.894vw, 3.75rem);
     font-style: normal;
     font-weight: 700;
 `;
@@ -87,6 +106,10 @@ const LogCadInput = styled.input`
 
     ::placeholder {
         color: #425466;
+        font-family: DM Sans;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
     }
 `;
 
@@ -162,6 +185,10 @@ const LogCadCardCadastro = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
+
+    @media (max-width: 600px) {
+        grid-template-columns: 100%;
+    }
 `;
 
 function CadastroCard() {

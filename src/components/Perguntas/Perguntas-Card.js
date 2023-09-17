@@ -46,7 +46,7 @@ export default function RecipeReviewCard({Titulo,SubTitulo,Conteudo}) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography variant="h5" color="#5D5A88" sx={{fontWeight: 'bold', fontFamily: 'DM Sans', fontSize: 'clamp(0.625rem, 0.227rem + 1.061vw, 1.5rem)'}} paragraph >{SubTitulo}</Typography>
-          <Typography variant="h6" color="#9795B5" sx={{fontFamily: 'DM Sans', fontSize: 'clamp(0.5rem, 0.159rem + 0.909vw, 1.25rem)'}} paragraph>
+          <Typography variant="h6" color="#9795B5" sx={{fontFamily: 'DM Sans', fontSize: 'clamp(0.75rem, 0.381rem + 0.985vw, 1.563rem)'}} paragraph>
             {Conteudo}
           </Typography>
         </CardContent>
