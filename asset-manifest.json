@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Site_peDagua_React/static/css/main.6539c688.css",
-    "main.js": "/Site_peDagua_React/static/js/main.fec4d4ce.js",
+    "main.js": "/Site_peDagua_React/static/js/main.a5ef12b9.js",
     "static/js/787.cfdb8f9f.chunk.js": "/Site_peDagua_React/static/js/787.cfdb8f9f.chunk.js",
     "static/media/Foto (6).jpg": "/Site_peDagua_React/static/media/Foto (6).de87e03c6fb37419f227.jpg",
     "static/media/Foto (3).jpg": "/Site_peDagua_React/static/media/Foto (3).d746cfeea1fe2c7cafc7.jpg",
@@ -28,11 +28,11 @@
     "index.html": "/Site_peDagua_React/index.html",
     "static/media/user-icon.svg": "/Site_peDagua_React/static/media/user-icon.1d78969303b6358f5bef1a2ecda07d2b.svg",
     "main.6539c688.css.map": "/Site_peDagua_React/static/css/main.6539c688.css.map",
-    "main.fec4d4ce.js.map": "/Site_peDagua_React/static/js/main.fec4d4ce.js.map",
+    "main.a5ef12b9.js.map": "/Site_peDagua_React/static/js/main.a5ef12b9.js.map",
     "787.cfdb8f9f.chunk.js.map": "/Site_peDagua_React/static/js/787.cfdb8f9f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6539c688.css",
-    "static/js/main.fec4d4ce.js"
+    "static/js/main.a5ef12b9.js"
   ]
 }
