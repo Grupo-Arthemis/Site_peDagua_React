@@ -1,3 +1,33 @@
+
+![Logo (1)](https://github.com/Grupo-Arthemis/Site_peDagua_React/assets/84590776/ab64a1db-9f06-47de-9c90-ee13887ad141)
+
+# Informações úteis 
+
+**Nome dos integrantes do grupo:** </br>
+- *Julia Azevedo Lins RM:98690* </br>
+- *Luis Gustavo Barreto Garrido RM:99210* </br>
+- *Luan Silveira Macéa RM:98290* </br>
+- *Felipe Cortez dos Santos RM:99750* </br>
+- *Victor Hugo Aranda Forte RM:99667* </br>
+
+**Usuarios pra teste:**
+
+| Email                      | Senha                      
+|----------------------------|----------------------------
+|Admin                       |123456                      
+
+```diff
+-                                        ATENÇÃO                                         -
+A pagina de consulta ainda está em desenvolvimento, sendo o tema principal para a sprint 4
+
+```
+
+**Grupo03**
+
+**Turma: (ESPW)**
+
+**Ano: 2023**
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
