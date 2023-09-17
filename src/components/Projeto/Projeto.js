@@ -189,9 +189,9 @@ function Projeto() {
 
             <ProjSection02 style={{backgroundColor: "#789CBC4D"}}>
                 <ProjSection01Texto>
-                  <ProjSection01SubTitulo>Como tudo começou</ProjSection01SubTitulo>
+                  <ProjSection01SubTitulo>Nossa missão</ProjSection01SubTitulo>
                   <ProjSection01P>
-                    Movidos pela visão da IBM de criar cidades mais inteligentes e sustentáveis, encontramos inspiração para nosso projeto na faculdade FIAP. Ao aceitarmos o desafio, decidimos unir nossos talentos e paixões para criar algo duradouro. Com a iniciativa da IBM como nosso farol, começamos a trabalhar com determinação, moldando um projeto que não apenas reflete nossa ambição, mas também nosso compromisso com o futuro da nossa cidade.
+                  Nosso compromisso é transformar nossa cidade em um ambiente mais inteligente e sustentável por meio de nosso projeto. Através da aplicação inovadora de tecnologia e ideias, estamos determinados a criar soluções tangíveis que melhorem a qualidade de vida dos cidadãos. Valorizamos a colaboração, a criatividade e a dedicação à causa. Nossa missão é pavimentar um caminho para um futuro mais promissor, onde cada passo conta na construção de uma comunidade mais eficiente e consciente do meio ambiente. Juntos, estamos impulsionando o progresso e o impacto positivo em nossa cidade.
                   </ProjSection01P>
                 </ProjSection01Texto>
                 <ProjImagem src={ProjetoAreaAlagada} alt="Foto da sala de aula" />

@@ -64,6 +64,7 @@ function Grupo() {
             Nome: 'Luís Garrido',
             Idade: '19 anos',
             Descricao: 'Estudante de Engenharia de Computação na Universidade Federal de Itajubá.',
+            Emoji: '👨‍💻',
             Facebook: '#',
             Twitter: '#',
             Instagram: '#',
@@ -74,6 +75,7 @@ function Grupo() {
             Nome: 'Julia Lins',
             Idade: '19 anos',
             Descricao: 'Minha paixão envolve tecnologia, criatividade e inovação. Faço parte de uma equipe que compartilha dessas paixões, buscando fazer a diferença.',
+            Emoji: '👩‍💻',
             Facebook: '#',
             Twitter: '#',
             Instagram: '#',
@@ -83,17 +85,19 @@ function Grupo() {
             Foto: FotoVictor,
             Nome: 'Victor Aranda',
             Idade: '19 anos',
-            Descricao: 'Estudante de Engenharia de Computação na Universidade Federal de Itajubá.',
-            Facebook: '#',
-            Twitter: '#',
-            Instagram: '#',
-            Linkedin: '#'
+            Descricao: 'Estudante de engenharia de Software na FIAP e analista de Mainframe na IBM.',
+            Emoji: '👻',
+            Facebook: 'https://www.facebook.com/victorhugo.arandaforte?mibextid=ZbWKwL',
+            Twitter: 'https://x.com/BLUE_2609?t=VVbVEdfyjFK-9DBKH5ILEQ&s=08',
+            Instagram: 'https://instagram.com/blue_2609?igshid=OGQ5ZDc2ODk2ZA==',
+            Linkedin: 'https://www.linkedin.com/in/victor-forte'
         },
         {
             Foto: FotoFelipe,
             Nome: 'Felipe Cortez',
             Idade: '20 anos',
             Descricao: 'Estudante de Engenharia de Computação na Universidade Federal de Itajubá.',
+            Emoji: '👨‍💻',
             Facebook: '#',
             Twitter: '#',
             Instagram: '#',
@@ -104,6 +108,7 @@ function Grupo() {
             Nome: 'Luan Macea',
             Idade: '19 anos',
             Descricao: 'Estudante de Engenharia de Computação na Universidade Federal de Itajubá.',
+            Emoji: '👨‍💻',
             Facebook: '#',
             Twitter: '#',
             Instagram: '#',
@@ -120,7 +125,7 @@ function Grupo() {
                 </GrupSection01Texto>
                 <GrupSection01Cards>
                 {integrantes.map((integrante, index) => (
-                        <GrupoCards key={index} Foto={integrante.Foto} Nome={integrante.Nome} Idade={integrante.Idade} Descricao={integrante.Descricao} Facebook={integrante.Facebook} Twitter={integrante.Twitter} Instagram={integrante.Instagram} Linkedin={integrante.Linkedin}/>
+                        <GrupoCards key={index} Foto={integrante.Foto} Nome={integrante.Nome} Idade={integrante.Idade} Descricao={integrante.Descricao} Emoji={integrante.Emoji} Facebook={integrante.Facebook} Twitter={integrante.Twitter} Instagram={integrante.Instagram} Linkedin={integrante.Linkedin}/>
                     ))}
                 </GrupSection01Cards>
             </GrupSection01>

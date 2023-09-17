@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import ReactPlayer from 'react-player/youtube'
 import imagemDeFundo01 from '../../assets/fundo/fundo-section-1.jpg';
 import HomeCard from './Home-Card';
+import { Link } from 'react-router-dom';
 
 const HomeSection01 = styled.section`
     padding: 10% 2%;
@@ -240,8 +241,8 @@ function Home() {
                     <HomeSection01ConteudoTitulo>Um sistema de alerta e monitoramento de enchentes</HomeSection01ConteudoTitulo>
                     <HomeSection01ConteudoSubTitulo>Mantenha-se seguro das águas. Sua fonte confiável para informações precisas e atualizadas sobre condições climáticas e níveis de água, ajudando você a tomar decisões bem-informadas.</HomeSection01ConteudoSubTitulo>
                     <HomeSection01ConteudoBotoesContainer>
-                        <ConsultButton>Consulte a sua localização  <i className="fas fa-arrow-right"></i></ConsultButton>
-                        <LearnMoreButton>Saiba mais  <i className="fas fa-arrow-right"></i></LearnMoreButton>
+                        <ConsultButton><Link to="/consulta">Consulte a sua localização  <i className="fas fa-arrow-right"></i></Link></ConsultButton>
+                        <LearnMoreButton><Link to='/projeto'>Saiba mais  <i className="fas fa-arrow-right"></i></Link></LearnMoreButton>
                     </HomeSection01ConteudoBotoesContainer>
                 </HomeSection01Conteudo>
             </HomeSection01>

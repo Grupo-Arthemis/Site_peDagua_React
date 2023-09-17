@@ -73,13 +73,14 @@ justify-content: space-evenly;
 `
 
 
-function GrupoCards({Foto, Nome, Idade, Descricao, Facebook, Twitter, Instagram, Linkedin}) {
+function GrupoCards({Foto, Nome, Idade, Descricao, Emoji, Facebook, Twitter, Instagram, Linkedin}) {
     return (
         <CardContainer>
             <img src={Foto} alt="Foto do grupo" />
             <CardNome>{Nome}</CardNome>
             <CardIdade>{Idade}</CardIdade>
             <CardDescricao>{Descricao}</CardDescricao>
+            <CardDescricao>{Emoji}</CardDescricao>
             <CardRedesSociais>
                 <li><a href={Facebook}><FacebookIcon sx={{ color: '#8D8BA7', backgroundColor: '#F2F1FA', borderRadius: '10%'}}/></a></li>
                 <li><a href={Twitter}><TwitterIcon sx={{ color: '#8D8BA7', backgroundColor: '#F2F1FA', borderRadius: '10%'}}/></a></li>
