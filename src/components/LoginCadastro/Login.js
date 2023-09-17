@@ -184,6 +184,8 @@ function LoginCard() {
             senhaInput: senha,
         };
 
+        const msgErrorLogin = document.querySelector('#avisoLogin');
+
         try {
             listaUser.forEach((usuario) => {
                 if (usuarioValidado.email === usuario.emailUsuario && usuarioValidado.senhaInput === usuario.senhaUsuario) {
@@ -197,12 +199,14 @@ function LoginCard() {
         } catch (msg) {
             if (msg === "VALIDADO!") {
                 localStorage.setItem("usuario-validado", JSON.stringify(usuarioValidado));
-                setMsgError("Bem vindo!");
+                msgErrorLogin.innerHTML = '<strong>Bem Vindo!</strong>';
+                msgErrorLogin.style.color = '#40933e';
                 setTimeout(() => {
                     window.location.href = "../index.html";
                 }, 3000);
             } else {
-                setMsgError("Login inválido!");
+                msgErrorLogin.innerHTML = '<strong>Login ou Senha invalidos!</strong>';
+                msgErrorLogin.style.color = '#b64646';
             }
         }
     };
@@ -214,7 +218,7 @@ function LoginCard() {
                     <LogCadAreaInfo>
                         <div>
                             <LogCadtitulo>Entrar</LogCadtitulo>
-                            <LogCadparagrafo id="avisoCadastro">Use seu e-mail e senha cadastrados</LogCadparagrafo>
+                            <LogCadparagrafo id="avisoLogin">Use seu e-mail e senha cadastrados</LogCadparagrafo>
                         </div>
                         <LogCadAreaInfoForm>
                             <LogCadInput
@@ -236,7 +240,6 @@ function LoginCard() {
                             />
                         </LogCadAreaInfoForm>
                         <Cadastrar onClick={handleLogin}>Entrar</Cadastrar>
-                        <p id="msgError">{msgError}</p>
                     </LogCadAreaInfo>
                     <LogCadAreaTroca>
                         <div>

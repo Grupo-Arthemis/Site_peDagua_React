@@ -212,8 +212,8 @@ function CadastroCard() {
         } else if (sobrenome.length < 2 || sobrenome.length > 30) {
             alert('O campo sobrenome não atingiu o número mínimo de caracteres.');
             return false;
-        } else if (senha.length < 6 || senha.length > 8) {
-            alert('A senha deve ter no mínimo 6 digitos e no máximo 8 digitos.');
+        } else if (senha.length < 6) {
+            alert('A senha deve ter no mínimo 6 digitos.');
             return false;
         } else if (senha !== confirma) {
             alert('A senha e a confirmação devem ser iguais.');

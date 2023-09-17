@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ReactPlayer from 'react-player/youtube'
 import imagemDeFundo01 from '../../assets/fundo/fundo-section-1.jpg';
 import HomeCard from './Home-Card';
 
@@ -147,14 +148,18 @@ const HomeSection02SubTitulo = styled.section`
 const Section02Video = styled.div`
   background: #eae8f0;
   border-radius: 20px;
-  height: 25vw;
-  width: 50vw;
+  width: 64.8vw;
+  height: 36.6vw;
   margin: auto;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
 
     @media only screen and (max-width: 600px) {
 
-        height: 50vw;
-        width: 90vw;
+        width: 83.1vw;
+        height: 46.6vw;
     }
 
 `;
@@ -245,7 +250,9 @@ function Home() {
                 <Section02VideoPitchContainer>
                     <HomeSection02Titulo>Vivencie e encontre.</HomeSection02Titulo>
                     <HomeSection02SubTitulo>Motivos pelos quais você pode confiar em nós.</HomeSection02SubTitulo>
-                    <Section02Video></Section02Video>
+                    <Section02Video>
+                      <ReactPlayer controls="true" url='https://youtu.be/9QY3zcMDWgY'  width="100%" height="100%"/>
+                    </Section02Video>
                 </Section02VideoPitchContainer>
             </HomeSection02>
 
