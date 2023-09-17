@@ -96,12 +96,12 @@ function Grupo() {
             Foto: FotoFelipe,
             Nome: 'Felipe Cortez',
             Idade: '20 anos',
-            Descricao: 'Estudante de Engenharia de Computação na Universidade Federal de Itajubá.',
-            Emoji: '👨‍💻',
+            Descricao: 'Estudante de engenharia de software, Analista de QA e programador do aparelho Guarda_Chuva, que ajuda você a se previnir de ser pego de surpresa por uma enchente ',
+            Emoji: '🎲',
             Facebook: '#',
             Twitter: '#',
             Instagram: '#',
-            Linkedin: '#'
+            Linkedin: 'https://www.linkedin.com/in/felipe-cortez-dos-santos-29306a205'
         },
         {
             Foto: FotoLuan,
