@@ -107,12 +107,12 @@ function Grupo() {
             Foto: FotoLuan,
             Nome: 'Luan Macea',
             Idade: '19 anos',
-            Descricao: 'Estudante de Engenharia de Computação na Universidade Federal de Itajubá.',
-            Emoji: '👨‍💻',
+            Descricao: 'Oi, tenho 19 anos e meu nome é Luan. Estou atualmente cursando Engenharia de Software e estou ansioso para aprender mais nesse campo fascinante da tecnologia.',
+            Emoji: '👍',
             Facebook: '#',
             Twitter: '#',
-            Instagram: '#',
-            Linkedin: '#'
+            Instagram: 'https://instagram.com/mluan_29?igshid=NzZlODBkYWE4Ng==',
+            Linkedin: 'https://www.linkedin.com/in/luan-macea-183169214'
         },
       ];
 
