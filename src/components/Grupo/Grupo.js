@@ -63,12 +63,12 @@ function Grupo() {
             Foto: FotoLuis,
             Nome: 'Luís Garrido',
             Idade: '19 anos',
-            Descricao: 'Estudante de Engenharia de Computação na Universidade Federal de Itajubá.',
-            Emoji: '👨‍💻',
+            Descricao: 'Com 19 anos, estudo engenharia de software e estou entusiasmado com a oportunidade de aprender e criar no vasto mundo da tecnologia. Tenho determinação para superar desafios e estou ansioso para o futuro.',
+            Emoji: '😶‍🌫️',
             Facebook: '#',
             Twitter: '#',
-            Instagram: '#',
-            Linkedin: '#'
+            Instagram: 'https://instagram.com/lbarreto_351?igshid=NjIwNzIyMDk2Mg==',
+            Linkedin: 'www.linkedin.com/in/luís-barreto1351'
         },
         {
             Foto: FotoJulia,
