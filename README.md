@@ -1,6 +1,10 @@
 
 ![Logo (1)](https://github.com/Grupo-Arthemis/Site_peDagua_React/assets/84590776/ab64a1db-9f06-47de-9c90-ee13887ad141)
 
+# Acesse em:
+- *O site:* https://grupo-arthemis.github.io/Site_peDagua_React/
+- *O Repositorio:* [https://grupo-arthemis.github.io/Site_peDagua_React/](https://github.com/Grupo-Arthemis/Site_peDagua_React)
+
 # Informações úteis 
 
 **Nome dos integrantes do grupo:** </br>
