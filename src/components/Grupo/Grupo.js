@@ -68,14 +68,14 @@ function Grupo() {
             Facebook: '#',
             Twitter: '#',
             Instagram: 'https://instagram.com/lbarreto_351?igshid=NjIwNzIyMDk2Mg==',
-            Linkedin: 'www.linkedin.com/in/luís-barreto1351'
+            Linkedin: 'https://www.linkedin.com/in/luís-barreto1351'
         },
         {
             Foto: FotoJulia,
             Nome: 'Julia Lins',
             Idade: '19 anos',
-            Descricao: 'Minha paixão envolve tecnologia, criatividade e inovação. Faço parte de uma equipe que compartilha dessas paixões, buscando fazer a diferença.',
-            Emoji: '🩰',
+            Descricao: 'Estudante de Engenharia de Software na FIAP e Analista de dados no C6 Bank. Minha paixão envolve tecnologia, criatividade e inovação. Faço parte de um equipe que compartilha dessas paixões, buscando fazer a diferença.',
+            Emoji: '🎨',
             Facebook: 'https://web.facebook.com/julia.azevedolins',
             Twitter: 'https://twitter.com/juu_az',
             Instagram: 'https://www.instagram.com/juh.az/',
