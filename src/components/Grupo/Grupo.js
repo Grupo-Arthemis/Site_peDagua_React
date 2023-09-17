@@ -64,7 +64,7 @@ function Grupo() {
             Nome: 'Luís Garrido',
             Idade: '19 anos',
             Descricao: 'Com 19 anos, estudo engenharia de software e estou entusiasmado com a oportunidade de aprender e criar no vasto mundo da tecnologia. Tenho determinação para superar desafios e estou ansioso para o futuro.',
-            Emoji: '😶‍🌫️',
+            Emoji: '🐾',
             Facebook: '#',
             Twitter: '#',
             Instagram: 'https://instagram.com/lbarreto_351?igshid=NjIwNzIyMDk2Mg==',
@@ -75,11 +75,11 @@ function Grupo() {
             Nome: 'Julia Lins',
             Idade: '19 anos',
             Descricao: 'Minha paixão envolve tecnologia, criatividade e inovação. Faço parte de uma equipe que compartilha dessas paixões, buscando fazer a diferença.',
-            Emoji: '👩‍💻',
-            Facebook: '#',
-            Twitter: '#',
-            Instagram: '#',
-            Linkedin: '#'
+            Emoji: '🩰',
+            Facebook: 'https://web.facebook.com/julia.azevedolins',
+            Twitter: 'https://twitter.com/juu_az',
+            Instagram: 'https://www.instagram.com/juh.az/',
+            Linkedin: 'https://www.linkedin.com/in/julia-azevedo-lins/'
         },
         {
             Foto: FotoVictor,
