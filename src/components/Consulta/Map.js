@@ -5,6 +5,7 @@ import PlacesAutocomplete, {
   getLatLng,
 } from 'react-places-autocomplete';
 
+
 const containerStyle = {
   width: '100%',
   height: '65vh'
@@ -12,7 +13,7 @@ const containerStyle = {
 
 const libraries = ["places"];
 
-export default function Home() {
+export default function Map({ onLocationSelect }) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: "AIzaSyD04y6Ip4Gu5lnlO894XGdf3rOA6BhGxow",
     libraries,
@@ -28,6 +29,8 @@ export default function Home() {
         (position) => {
           setMapCenter({ lat: position.coords.latitude, lng: position.coords.longitude });
           setMarkerPosition({ lat: position.coords.latitude, lng: position.coords.longitude });
+          onLocationSelect({ lat: position.coords.latitude, lng: position.coords.longitude });
+          
         },
         (error) => {
           console.error('Error getting current position', error);
@@ -49,6 +52,7 @@ export default function Home() {
       const latLng = await getLatLng(results[0]);
       setMapCenter(latLng);
       setMarkerPosition(latLng);
+      onLocationSelect(latLng); // Call the callback function with the selected location
     } catch (error) {
       console.error('Error', error);
     }
@@ -69,7 +73,7 @@ export default function Home() {
   if (!isLoaded) return <div>Loading...</div>;
 
   return (
-    <div style={{  height: '100%' }}>
+    <div style={{ height: '100%' }}>
       <PlacesAutocomplete
         value={selectedAddress}
         onChange={handleAddressChange}
@@ -92,32 +96,41 @@ export default function Home() {
                   borderRadius: '20px',
                   fontSize: '16px',
                   padding: '0 5%',
-                  fontFamily: "DM Sans"
+                  fontFamily: 'DM Sans',
                 },
               })}
             />
-              <div
-                className="autocomplete-dropdown-container"
-                style={{ position: 'absolute', zIndex: 1, backgroundColor: '#fff', width: '100%', fontSize: '16px' }}
-              >
-                {loading && <div>Carregando...</div>}
-                {suggestions.map((suggestion) => {
-                  const className = suggestion.active
-                    ? 'suggestion-item--active'
-                    : 'suggestion-item';
-                  return (
-                    <div
-                      {...getSuggestionItemProps(suggestion, {
-                        className,
-                      })}
-                    >
-                      <span style={{ fontFamily: 'DM Sans' }}>{renderSuggestion(suggestion)}</span>
-                    </div>
-                  );
-                })}
-              </div>
+            <div
+              className="autocomplete-dropdown-container"
+              style={{
+                position: 'absolute',
+                zIndex: 1,
+                backgroundColor: '#fff',
+                width: '100%',
+                fontSize: '16px',
+              }}
+            >
+              {loading && <div>Carregando...</div>}
+              {suggestions.map((suggestion) => {
+                const className = suggestion.active
+                  ? 'suggestion-item--active'
+                  : 'suggestion-item';
+                return (
+                  <div
+                    key={suggestion.description}
+                    {...getSuggestionItemProps(suggestion, {
+                      className,
+                    })}
+                  >
+                    <span style={{ fontFamily: 'DM Sans' }}>
+                      {renderSuggestion(suggestion)}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
-          )}
+          </div>
+        )}
       </PlacesAutocomplete>
       <GoogleMap mapContainerStyle={containerStyle} zoom={17} center={mapCenter}>
         {markerPosition && <Marker position={markerPosition} />}
