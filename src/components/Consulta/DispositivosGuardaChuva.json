@@ -13,7 +13,7 @@
         }
     },
     {    
-        "GuardaChuvaId": "Falso",
+        "GuardaChuvaId": "Dispositivo 2",
         "GuardaChuvaDataInstalacao": "19/09/2023",
         "GuardaChuvaLocalizacaoAtual": {"lat": -23.5534516, "lng": -46.76517},
         "GuardaChuvaArea": {
