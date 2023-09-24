@@ -252,7 +252,7 @@ function Home() {
                     <HomeSection02Titulo>Vivencie e encontre.</HomeSection02Titulo>
                     <HomeSection02SubTitulo>Motivos pelos quais você pode confiar em nós.</HomeSection02SubTitulo>
                     <Section02Video>
-                      <ReactPlayer controls="true" url='https://youtu.be/9QY3zcMDWgY'  width="100%" height="100%"/>
+                      <ReactPlayer controls={true} url='https://youtu.be/9QY3zcMDWgY'  width="100%" height="100%"/>
                     </Section02Video>
                 </Section02VideoPitchContainer>
             </HomeSection02>

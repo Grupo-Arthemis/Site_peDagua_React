@@ -1,5 +1,6 @@
 import data from "./DispositivosGuardaChuva.json";
 import styled from "styled-components";
+import React, { useState, useEffect } from "react";
 
 const PergSection02CardContainer = styled.div`
   display: grid;
@@ -32,13 +33,11 @@ const PergSection02Card3 = styled.div`
   border-radius: 20px;
 `;
 
-
-// ---------------------------------------------------------------------------------------
-
-function VerificarAreas(localizacao) {
+function VerificarAreas(localizacao, setNivelDeChuva, setUmidade, setTemperatura) {
   let guardaChuvaIdEncontrado = null;
 
-  data.forEach((GuardaChuva) => {
+  for (let i = 0; i < data.length; i++) {
+    const GuardaChuva = data[i];
     var vertice_1 = GuardaChuva.GuardaChuvaArea.vertice_1;
     var vertice_2 = GuardaChuva.GuardaChuvaArea.vertice_2;
     var vertice_3 = GuardaChuva.GuardaChuvaArea.vertice_3;
@@ -60,16 +59,18 @@ function VerificarAreas(localizacao) {
 
     var estaDentro = pontoDentroDoPoligono(localizacao, vertices);
 
-    
     if (estaDentro) {
       console.log("Guarda Chuva encontrado");
       guardaChuvaIdEncontrado = GuardaChuva.GuardaChuvaId;
-      pegaDados(guardaChuvaIdEncontrado);
-    } else{
-      console.log("Guarda Chuva não encontrado");
+      pegaDados(guardaChuvaIdEncontrado, setNivelDeChuva, setUmidade, setTemperatura);
+      break;
+    } else {
+      setNivelDeChuva("Não encontrado");
+      setUmidade("Não encontrado ");
+      setTemperatura("Não encontrado ");
       estaDentro = false;
     }
-  });
+  }
 
   if (guardaChuvaIdEncontrado) {
     return guardaChuvaIdEncontrado;
@@ -77,9 +78,6 @@ function VerificarAreas(localizacao) {
     return "Nenhum Guarda Chuva encontrado";
   }
 }
-
-// ---------------------------------------------------------------------------------------
-// ---------------------------------------------------------------------------------------
 
 function pontoDentroDoPoligono(ponto, vertices) {
   let dentro = false;
@@ -91,9 +89,9 @@ function pontoDentroDoPoligono(ponto, vertices) {
     const intersecta =
       vertice1.lng > ponto.lng !== vertice2.lng > ponto.lng &&
       ponto.lat <
-      ((vertice2.lat - vertice1.lat) * (ponto.lng - vertice1.lng)) /
-      (vertice2.lng - vertice1.lng) +
-      vertice1.lat;
+        ((vertice2.lat - vertice1.lat) * (ponto.lng - vertice1.lng)) /
+          (vertice2.lng - vertice1.lng) +
+          vertice1.lat;
 
     if (intersecta) {
       dentro = true;
@@ -103,10 +101,7 @@ function pontoDentroDoPoligono(ponto, vertices) {
   return dentro;
 }
 
-// ---------------------------------------------------------------------------------------
-// ---------------------------------------------------------------------------------------
-
-function pegaDados(GuardaChuvaId) {
+function pegaDados(GuardaChuvaId, setNivelDeChuva, setUmidade, setTemperatura) {
   var myHeaders = new Headers();
   myHeaders.append("device-token", GuardaChuvaId);
 
@@ -129,14 +124,13 @@ function pegaDados(GuardaChuvaId) {
       if (result.result && result.result.length > 0) {
         var data = result;
 
-        var nivelDeChuva = data.result[0].value + data.result[0].unit;
-        var umidade = data.result[1].value + data.result[1].unit;
-        var temperatura = data.result[2].value + data.result[2].unit;
+        setNivelDeChuva(data.result[0].value + data.result[0].unit);
+        setUmidade(data.result[1].value + data.result[1].unit);
+        setTemperatura(data.result[2].value + data.result[2].unit);
 
-        console.log("Nivel de Chuva: ", nivelDeChuva);
-        console.log("Umidade: ", umidade);
-        console.log("Temperatura: ", temperatura);
-
+        console.log("Nivel de Chuva: ", data.result[0].value + data.result[0].unit);
+        console.log("Umidade: ", data.result[1].value + data.result[1].unit);
+        console.log("Temperatura: ", data.result[2].value + data.result[2].unit);
       } else {
         console.error("API response is missing expected data.");
       }
@@ -144,39 +138,36 @@ function pegaDados(GuardaChuvaId) {
     .catch((error) => console.log("error", error));
 }
 
-// ---------------------------------------------------------------------------------------
-
 function ObterInfo(props) {
   const { localizacao } = props;
+  const [nivelDeChuva, setNivelDeChuva] = useState("");
+  const [umidade, setUmidade] = useState("");
+  const [temperatura, setTemperatura] = useState("");
 
-  if (localizacao != null) {
-    console.log("localizacao recebida:", localizacao);
-    VerificarAreas(localizacao);
-    console.log("-------------------------------------------------");
-
-
-
-    console.log("---------------------fim-------------------------");
-  }
-
+  useEffect(() => {
+    if (localizacao != null) {
+      console.log("localizacao recebida:", localizacao);
+      VerificarAreas(localizacao, setNivelDeChuva, setUmidade, setTemperatura);
+    }
+  }, [localizacao]);
 
   return (
     <div style={{ width: "100%", height: "100%" }}>
-      <PergSection02CardContainer>
-        <PergSection02Card1>
-          <p>Card1</p>
-
-        </PergSection02Card1>
-        <PergSection02Card2>
-          <p>Card2</p>
-
-        </PergSection02Card2>
-        <PergSection02Card3>
-          <p>Card3</p>
-
-        </PergSection02Card3>
-      </PergSection02CardContainer>
-
+      {nivelDeChuva !== "" && umidade !== "" && temperatura !== "" ? (
+        <PergSection02CardContainer>
+          <PergSection02Card1>
+            <p>Nível de Chuva: {nivelDeChuva}</p>
+          </PergSection02Card1>
+          <PergSection02Card2>
+            <p>Umidade: {umidade}</p>
+          </PergSection02Card2>
+          <PergSection02Card3>
+            <p>Temperatura: {temperatura}</p>
+          </PergSection02Card3>
+        </PergSection02CardContainer>
+      ) : (
+        <p>Nenhum Guarda Chuva encontrado.</p>
+      )}
     </div>
   );
 }
