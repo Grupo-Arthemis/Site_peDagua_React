@@ -2,7 +2,14 @@ import data from "./DispositivosGuardaChuva.json";
 import styled from "styled-components";
 import React, { useState, useEffect } from "react";
 
-const PergSection02CardContainer = styled.div`
+import EnchenteAlta from "../../assets/cardsConsultasIcons/enchente-icone-alto.svg";
+import EnchenteMedio from "../../assets/cardsConsultasIcons/enchente-icone-medio.svg";
+import EnchenteBaixo from "../../assets/cardsConsultasIcons/enchente-icone-baixo.svg";
+
+
+
+
+const ConsuSection02CardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -15,22 +22,67 @@ const PergSection02CardContainer = styled.div`
   gap: 2%;
 `;
 
-const PergSection02Card1 = styled.div`
+const ConsuSection02Card1 = styled.div`
   grid-area: Card1;
   background-color: #f7eded;
   border-radius: 20px;
+  display flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
 `;
 
-const PergSection02Card2 = styled.div`
+const ConsuSection02Card2 = styled.div`
   grid-area: Card2;
   background-color: #edf2f7;
   border-radius: 20px;
 `;
 
-const PergSection02Card3 = styled.div`
+const ConsuSection02Card3 = styled.div`
   grid-area: Card3;
   background-color: #edf2f7;
   border-radius: 20px;
+`;
+
+
+
+  const ConsuCardTitulo = styled.h1`
+  color: #C8575E;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: DM Sans;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+`;
+
+const ConsuCardDivisao = styled.div`
+  background-color: #C8575E;
+  margin: 8px auto;
+  height: 2px;
+  width: 80%;
+`;
+
+const ConsuCardSubTitulo = styled.h2`
+  color: #000;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: DM Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+`;
+
+const ConsuCardSubInfo = styled.h2`
+  color: #000;
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
 `;
 
 function VerificarAreas(localizacao, setNivelDeChuva, setUmidade, setTemperatura) {
@@ -154,17 +206,22 @@ function ObterInfo(props) {
   return (
     <div style={{ width: "100%", height: "100%" }}>
       {nivelDeChuva !== "" && umidade !== "" && temperatura !== "" ? (
-        <PergSection02CardContainer>
-          <PergSection02Card1>
+        <ConsuSection02CardContainer>
+          <ConsuSection02Card1>
+            <img src={EnchenteAlta} alt="Enchente Alta" />
+             <ConsuCardTitulo>Alto risco de alagamento!</ConsuCardTitulo>
+              <ConsuCardDivisao></ConsuCardDivisao>
+              <ConsuCardSubTitulo>Esteja preparado para uma possivel enchente</ConsuCardSubTitulo>
+              <ConsuCardSubInfo>Caso seja necessario, entre em contato com  as autoridades mais proximas</ConsuCardSubInfo>
             <p>Nível de Chuva: {nivelDeChuva}</p>
-          </PergSection02Card1>
-          <PergSection02Card2>
+          </ConsuSection02Card1>
+          <ConsuSection02Card2>
             <p>Umidade: {umidade}</p>
-          </PergSection02Card2>
-          <PergSection02Card3>
+          </ConsuSection02Card2>
+          <ConsuSection02Card3>
             <p>Temperatura: {temperatura}</p>
-          </PergSection02Card3>
-        </PergSection02CardContainer>
+          </ConsuSection02Card3>
+        </ConsuSection02CardContainer>
       ) : (
         <p>Nenhum Guarda Chuva encontrado.</p>
       )}

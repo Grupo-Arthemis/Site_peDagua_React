@@ -3,7 +3,7 @@ import MapContainer from "./Map";
 import React, { useState } from "react";
 import ObterInfo from "./ObterInfo";
 
-const PergSection01 = styled.div`
+const ConsuSection01 = styled.div`
   padding: 5% 2%;
   width: 96%;
   display: flex;
@@ -13,13 +13,13 @@ const PergSection01 = styled.div`
   gap: 10vh;
 `;
 
-const PergSection01Texto = styled.div`
+const ConsuSection01Texto = styled.div`
   gap: 2vw;
   display: flex;
   flex-direction: column;
 `;
 
-const PergSection01H1 = styled.h1`
+const ConsuSection01H1 = styled.h1`
   color: #5d5a88;
   text-align: center;
   font-feature-settings: "clig" off, "liga" off;
@@ -30,7 +30,7 @@ const PergSection01H1 = styled.h1`
   line-height: normal;
 `;
 
-const PergSection01P = styled.p`
+const ConsuSection01P = styled.p`
   color: #9795b5;
   text-align: center;
   font-feature-settings: "clig" off, "liga" off;
@@ -43,30 +43,30 @@ const PergSection01P = styled.p`
   margin: 0 auto;
 `;
 
-const PergSection01Perguntas = styled.div`
+const ConsuSection01Consuuntas = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2vw;
 `;
 
-const PergSection02 = styled.div`
+const ConsuSection02 = styled.div`
   padding: 5vh 2%;
   width: 96%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   background-color: #fff;
   align-items: center;
   height: 75vh;
   gap: 2%;
 `;
 
-const PergSection02Mapa = styled.div`
+const ConsuSection02Mapa = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
 `;
 
-const PergSection02InteractiveArea = styled.div`
+const ConsuSection02InteractiveArea = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
@@ -74,7 +74,7 @@ const PergSection02InteractiveArea = styled.div`
   flex-direction: column;
 `;
 
-const PergSection02InteractiveAreaButton = styled.button`
+const ConsuSection02InteractiveAreaButton = styled.button`
   background-color: #5d5a88;
   color: #fff;
   border: none;
@@ -103,37 +103,37 @@ function Consulta() {
   };
 
   return (
-    <div className="Perguntas">
-      <PergSection01>
-        <PergSection01Texto>
-          <PergSection01H1>
+    <div className="Consulta">
+      <ConsuSection01>
+        <ConsuSection01Texto>
+          <ConsuSection01H1>
             Previsão de clima e alertas de enchentes
-          </PergSection01H1>
-          <PergSection01P>
+          </ConsuSection01H1>
+          <ConsuSection01P>
             Obtenha informações climáticas precisas para a sua localização e
             receba alertas de enchentes em nosso portal de consulta climática.
             Esteja preparado e mantenha-se seguro.
-          </PergSection01P>
-          <PergSection01P>
+          </ConsuSection01P>
+          <ConsuSection01P>
             Essa pagina está sob manutenção, sua atividade será normalizada a
             partir do dia 26/09/2023, por enquanto somente a pesquisa de
             endereço está disponivel!
-          </PergSection01P>
-        </PergSection01Texto>
-      </PergSection01>
-      <PergSection02>
+          </ConsuSection01P>
+        </ConsuSection01Texto>
+      </ConsuSection01>
+      <ConsuSection02>
         <MapContainer
           styled={{ width: "500px" }}
           onLocationSelect={handleLocationSelect}
         />
-        <PergSection02InteractiveArea>
+        <ConsuSection02InteractiveArea>
           {selectedLocation && (
-            <PergSection02InteractiveArea>
+            <ConsuSection02InteractiveArea>
               <ObterInfo localizacao={selectedLocation} />
-            </PergSection02InteractiveArea>
+            </ConsuSection02InteractiveArea>
           )}
-        </PergSection02InteractiveArea>
-      </PergSection02>
+        </ConsuSection02InteractiveArea>
+      </ConsuSection02>
     </div>
   );
 }
