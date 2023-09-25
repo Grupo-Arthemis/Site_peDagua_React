@@ -9,6 +9,8 @@ import EnchenteBaixo from "../../assets/cardsConsultasIcons/enchente-icone-baixo
 
 
 
+
+
 const ConsuSection02CardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -117,9 +119,9 @@ function VerificarAreas(localizacao, setNivelDeChuva, setUmidade, setTemperatura
       pegaDados(guardaChuvaIdEncontrado, setNivelDeChuva, setUmidade, setTemperatura);
       break;
     } else {
-      setNivelDeChuva("Não encontrado");
-      setUmidade("Não encontrado ");
-      setTemperatura("Não encontrado ");
+      setNivelDeChuva(0);
+      setUmidade(0);
+      setTemperatura(0);
       estaDentro = false;
     }
   }
@@ -176,13 +178,13 @@ function pegaDados(GuardaChuvaId, setNivelDeChuva, setUmidade, setTemperatura) {
       if (result.result && result.result.length > 0) {
         var data = result;
 
-        setNivelDeChuva(data.result[0].value + data.result[0].unit);
-        setUmidade(data.result[1].value + data.result[1].unit);
-        setTemperatura(data.result[2].value + data.result[2].unit);
+        setNivelDeChuva(data.result[0].value);
+        setUmidade(data.result[1].value);
+        setTemperatura(data.result[2].value);
 
-        console.log("Nivel de Chuva: ", data.result[0].value + data.result[0].unit);
-        console.log("Umidade: ", data.result[1].value + data.result[1].unit);
-        console.log("Temperatura: ", data.result[2].value + data.result[2].unit);
+        console.log("Nivel de Chuva: ", data.result[0].value);
+        console.log("Umidade: ", data.result[1].value);
+        console.log("Temperatura: ", data.result[2].value);
       } else {
         console.error("API response is missing expected data.");
       }
@@ -207,14 +209,34 @@ function ObterInfo(props) {
     <div style={{ width: "100%", height: "100%" }}>
       {nivelDeChuva !== "" && umidade !== "" && temperatura !== "" ? (
         <ConsuSection02CardContainer>
-          <ConsuSection02Card1>
-            <img src={EnchenteAlta} alt="Enchente Alta" />
-             <ConsuCardTitulo>Alto risco de alagamento!</ConsuCardTitulo>
-              <ConsuCardDivisao></ConsuCardDivisao>
-              <ConsuCardSubTitulo>Esteja preparado para uma possivel enchente</ConsuCardSubTitulo>
-              <ConsuCardSubInfo>Caso seja necessario, entre em contato com  as autoridades mais proximas</ConsuCardSubInfo>
-            <p>Nível de Chuva: {nivelDeChuva}</p>
-          </ConsuSection02Card1>
+            {nivelDeChuva > 45 ? (
+              <ConsuSection02Card1>
+                <img src={EnchenteAlta} alt="Enchente Alta" />
+                <ConsuCardTitulo>Alto risco de alagamento!</ConsuCardTitulo>
+                <ConsuCardDivisao></ConsuCardDivisao>
+                <ConsuCardSubTitulo>Esteja preparado para uma possivel enchente</ConsuCardSubTitulo>
+                <ConsuCardSubInfo>Caso seja necessario, entre em contato com  as autoridades mais proximas</ConsuCardSubInfo>
+                <ConsuCardSubInfo style={{fontWeight:"bold"}}>Nível de Chuva: {nivelDeChuva} mm</ConsuCardSubInfo>
+              </ConsuSection02Card1>
+              ) : nivelDeChuva < 45 && nivelDeChuva >1 ? (
+                <ConsuSection02Card1 style={{backgroundColor:"#FFF0E2"}}>
+                  <img src={EnchenteMedio} alt="Enchente Media" />
+                  <ConsuCardTitulo style={{color:"#D69255"}}>Risco de alagamento moderado!</ConsuCardTitulo>
+                  <ConsuCardDivisao style={{backgroundColor:"#D69255"}}></ConsuCardDivisao>
+                  <ConsuCardSubTitulo>Sem enchentes eminentes por enquanto</ConsuCardSubTitulo>
+                  <ConsuCardSubInfo style={{fontWeight:"bold"}}>Nível de Chuva: {nivelDeChuva} mm</ConsuCardSubInfo>
+               </ConsuSection02Card1>
+              ) : (
+                <ConsuSection02Card1 style={{backgroundColor:"#EDF2F7"}}>
+                  <img src={EnchenteBaixo} alt="Enchente Baixa" />
+                  <ConsuCardTitulo style={{color:"#7CB073"}}>Sem risco de alagamento</ConsuCardTitulo>
+                  <ConsuCardDivisao style={{backgroundColor:"#7CB073"}}></ConsuCardDivisao>
+                  <ConsuCardSubTitulo>Nenhuma enchente prevista</ConsuCardSubTitulo>
+                  <ConsuCardSubInfo style={{fontWeight:"bold"}}> Nível de Chuva: {nivelDeChuva} mm</ConsuCardSubInfo>
+                </ConsuSection02Card1>
+              )
+            }
+                
           <ConsuSection02Card2>
             <p>Umidade: {umidade}</p>
           </ConsuSection02Card2>
