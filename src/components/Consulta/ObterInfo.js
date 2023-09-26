@@ -6,6 +6,14 @@ import EnchenteAlta from "../../assets/cardsConsultasIcons/enchente-icone-alto.s
 import EnchenteMedio from "../../assets/cardsConsultasIcons/enchente-icone-medio.svg";
 import EnchenteBaixo from "../../assets/cardsConsultasIcons/enchente-icone-baixo.svg";
 
+import UmidadeAlta from "../../assets/cardsConsultasIcons/umidade-icone-alto.svg";
+import UmidadeMedio from "../../assets/cardsConsultasIcons/umidade-icone-medio.svg";
+import UmidadeBaixo from "../../assets/cardsConsultasIcons/umidade-icone-baixo.svg";
+
+import TemperaturaAlta from "../../assets/cardsConsultasIcons/temperatura-icone-alto.svg";
+import TemperaturaMedio from "../../assets/cardsConsultasIcons/temperatura-icone-medio.svg";
+import TemperaturaBaixo from "../../assets/cardsConsultasIcons/temperatura-icone-baixo.svg";
+
 
 
 
@@ -37,14 +45,24 @@ const ConsuSection02Card1 = styled.div`
 
 const ConsuSection02Card2 = styled.div`
   grid-area: Card2;
-  background-color: #edf2f7;
+  background-color: #f7eded;
   border-radius: 20px;
+  display flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
 `;
 
 const ConsuSection02Card3 = styled.div`
   grid-area: Card3;
-  background-color: #edf2f7;
+  background-color: #f7eded;
   border-radius: 20px;
+  display flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
 `;
 
 
@@ -236,18 +254,59 @@ function ObterInfo(props) {
                 </ConsuSection02Card1>
               )
             }
-                
-          <ConsuSection02Card2>
-            <p>Umidade: {umidade}</p>
-          </ConsuSection02Card2>
-          <ConsuSection02Card3>
-            <p>Temperatura: {temperatura}</p>
-          </ConsuSection02Card3>
+          {umidade > 75 ? (
+              <ConsuSection02Card2>
+                <img src={UmidadeAlta} alt="Umidade Alta" />
+                <ConsuCardTitulo>Alta umidade</ConsuCardTitulo>
+                  <ConsuCardDivisao></ConsuCardDivisao>
+                  <ConsuCardSubInfo style={{fontWeight:"bold"}}>Nível de umidade: {umidade} %</ConsuCardSubInfo>
+              </ConsuSection02Card2>
+              ) : umidade > 45 && umidade <76 ? (
+                <ConsuSection02Card2 style={{backgroundColor:"#FFF0E2"}}>
+                  <img src={UmidadeMedio} alt="Umidade Media" />
+                  <ConsuCardTitulo style={{color:"#D69255"}}>Media umidade</ConsuCardTitulo>
+                  <ConsuCardDivisao style={{backgroundColor:"#FFF0E2"}}></ConsuCardDivisao>
+                  <ConsuCardSubInfo style={{fontWeight:"bold"}}>Nível de umidade: {umidade} %</ConsuCardSubInfo>
+               </ConsuSection02Card2>
+              ) : (
+                <ConsuSection02Card2 style={{backgroundColor:"#EDF2F7"}}>
+                  <img src={UmidadeBaixo} alt="Umidade Baixa" />
+                  <ConsuCardTitulo style={{color:"#7CB073"}}>Baixa umidade</ConsuCardTitulo>
+                  <ConsuCardDivisao style={{color:"#7CB073"}}></ConsuCardDivisao>
+                  <ConsuCardSubInfo style={{fontWeight:"bold"}}> Nível de umidade: {umidade} %</ConsuCardSubInfo>
+                </ConsuSection02Card2>
+              )
+            }
+            {temperatura > 28 ? (
+              <ConsuSection02Card3>
+                <img src={TemperaturaAlta} alt="Enchente Alta" />
+                <ConsuCardTitulo>Alta temperatura</ConsuCardTitulo>
+                <ConsuCardDivisao></ConsuCardDivisao>
+                <ConsuCardSubTitulo>Esteja preparado para uma possivel enchente</ConsuCardSubTitulo>
+                <ConsuCardSubInfo>Caso seja necessario, entre em contato com  as autoridades mais proximas</ConsuCardSubInfo>
+                <ConsuCardSubInfo style={{fontWeight:"bold"}}>Temperatura: {temperatura} ºC</ConsuCardSubInfo>
+              </ConsuSection02Card3>
+              ) : temperatura > 14 && temperatura < 29 ? (
+                <ConsuSection02Card3 style={{backgroundColor:"#D5E6D2"}}>
+                  <img src={TemperaturaMedio} alt="Enchente Media" />
+                  <ConsuCardTitulo style={{color:"#7CB073"}}>Temperatura Adequada</ConsuCardTitulo>
+                  <ConsuCardDivisao style={{backgroundColor:"#7CB073"}}></ConsuCardDivisao>
+                  <ConsuCardSubInfo style={{fontWeight:"bold"}}>Temperatura: {temperatura} ºC</ConsuCardSubInfo>
+               </ConsuSection02Card3>
+              ) : (
+                <ConsuSection02Card3 style={{backgroundColor:"#EDF2F7"}}>
+                  <img src={TemperaturaBaixo} alt="Enchente Baixa" />
+                  <ConsuCardTitulo style={{color:"#4AA8C7"}}>Temperatura Baixa</ConsuCardTitulo>
+                  <ConsuCardDivisao style={{backgroundColor:"#4AA8C7"}}></ConsuCardDivisao>
+                  <ConsuCardSubInfo style={{fontWeight:"bold"}}> Temperatura: {temperatura} ºC</ConsuCardSubInfo>
+                </ConsuSection02Card3>
+              )
+            }
         </ConsuSection02CardContainer>
       ) : (
         <p>Nenhum Guarda Chuva encontrado.</p>
       )}
-    </div>
+    </div>  
   );
 }
 
