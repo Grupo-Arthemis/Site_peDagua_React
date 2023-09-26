@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Site_peDagua_React/static/css/main.6c6fc151.css",
-    "main.js": "/Site_peDagua_React/static/js/main.439ab5c3.js",
+    "main.js": "/Site_peDagua_React/static/js/main.50904e84.js",
     "static/js/787.cfdb8f9f.chunk.js": "/Site_peDagua_React/static/js/787.cfdb8f9f.chunk.js",
     "static/media/Foto (6).jpg": "/Site_peDagua_React/static/media/Foto (6).de87e03c6fb37419f227.jpg",
     "static/media/Foto (3).jpg": "/Site_peDagua_React/static/media/Foto (3).d746cfeea1fe2c7cafc7.jpg",
@@ -21,18 +21,27 @@
     "static/media/Victor.png": "/Site_peDagua_React/static/media/Victor.de7d90fb400bd07059b4.png",
     "static/media/Luan.png": "/Site_peDagua_React/static/media/Luan.dee6500ed5a61859c19e.png",
     "static/media/Felipe.png": "/Site_peDagua_React/static/media/Felipe.8da5a66011a763730b34.png",
+    "static/media/enchente-icone-alto.svg": "/Site_peDagua_React/static/media/enchente-icone-alto.4d7b4d47c5e9a269791fbd56b0327ee8.svg",
+    "static/media/enchente-icone-medio.svg": "/Site_peDagua_React/static/media/enchente-icone-medio.3d4f7bce82ecf65804cdadd2fe894b6c.svg",
+    "static/media/enchente-icone-baixo.svg": "/Site_peDagua_React/static/media/enchente-icone-baixo.72b38eea2ff261c41610436163a98a28.svg",
+    "static/media/temperatura-icone-medio.svg": "/Site_peDagua_React/static/media/temperatura-icone-medio.3a49671a4415ce371608190c11eb0874.svg",
+    "static/media/temperatura-icone-alto.svg": "/Site_peDagua_React/static/media/temperatura-icone-alto.33975c8c136737ab2a4cebffff8c6c99.svg",
+    "static/media/temperatura-icone-baixo.svg": "/Site_peDagua_React/static/media/temperatura-icone-baixo.fff3ad6a7a5e16792c0c6c04159df12a.svg",
     "static/media/slick.svg": "/Site_peDagua_React/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Site_peDagua_React/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/Site_peDagua_React/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Site_peDagua_React/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/umidade-icone-medio.svg": "/Site_peDagua_React/static/media/umidade-icone-medio.ec159c1bec51111962cdf71261993429.svg",
+    "static/media/umidade-icone-baixo.svg": "/Site_peDagua_React/static/media/umidade-icone-baixo.aa7a3e596d0eecb246af1152a9121a08.svg",
+    "static/media/umidade-icone-alto.svg": "/Site_peDagua_React/static/media/umidade-icone-alto.3c9d7d58f6680a2eb26d6617f1ff5d05.svg",
     "index.html": "/Site_peDagua_React/index.html",
     "static/media/user-icon.svg": "/Site_peDagua_React/static/media/user-icon.1d78969303b6358f5bef1a2ecda07d2b.svg",
     "main.6c6fc151.css.map": "/Site_peDagua_React/static/css/main.6c6fc151.css.map",
-    "main.439ab5c3.js.map": "/Site_peDagua_React/static/js/main.439ab5c3.js.map",
+    "main.50904e84.js.map": "/Site_peDagua_React/static/js/main.50904e84.js.map",
     "787.cfdb8f9f.chunk.js.map": "/Site_peDagua_React/static/js/787.cfdb8f9f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6c6fc151.css",
-    "static/js/main.439ab5c3.js"
+    "static/js/main.50904e84.js"
   ]
 }
