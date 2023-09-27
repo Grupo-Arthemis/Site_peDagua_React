@@ -73,7 +73,7 @@ export default function Map({ onLocationSelect }) {
   if (!isLoaded) return <div>Loading...</div>;
 
   return (
-    <div style={{ height: '100%' }}>
+    <div style={{ height: '100%'  }}>
       <PlacesAutocomplete
         value={selectedAddress}
         onChange={handleAddressChange}

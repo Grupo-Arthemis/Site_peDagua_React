@@ -23,13 +23,29 @@ const ConsuSection02CardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
   grid-template-areas:
     "Card1 Card2"
     "Card1 Card3";
-  width: 97%;
+  width: 100%;
   height: 100%;
   gap: 2%;
+
+  @media screen and (max-width: 1500px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "Card1"
+      "Card2"
+      "Card3";
+  }
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "Card1"
+      "Card2"
+      "Card3";
+  }
 `;
 
 const ConsuSection02Card1 = styled.div`
@@ -272,7 +288,7 @@ function ObterInfo(props) {
                 <ConsuSection02Card2 style={{backgroundColor:"#EDF2F7"}}>
                   <img src={UmidadeBaixo} alt="Umidade Baixa" />
                   <ConsuCardTitulo style={{color:"#7CB073"}}>Baixa umidade</ConsuCardTitulo>
-                  <ConsuCardDivisao style={{color:"#7CB073"}}></ConsuCardDivisao>
+                  <ConsuCardDivisao style={{backgroundColor:"#7CB073"}}></ConsuCardDivisao>
                   <ConsuCardSubInfo style={{fontWeight:"bold"}}> Nível de umidade: {umidade} %</ConsuCardSubInfo>
                 </ConsuSection02Card2>
               )

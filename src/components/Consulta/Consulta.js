@@ -43,12 +43,6 @@ const ConsuSection01P = styled.p`
   margin: 0 auto;
 `;
 
-const ConsuSection01Consuuntas = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2vw;
-`;
-
 const ConsuSection02 = styled.div`
   padding: 5vh 2%;
   width: 96%;
@@ -56,14 +50,16 @@ const ConsuSection02 = styled.div`
   grid-template-columns: 0.8fr 1.2fr;
   background-color: #fff;
   align-items: center;
-  height: 75vh;
+  height: 80vh;
   gap: 2%;
-`;
-
-const ConsuSection02Mapa = styled.div`
-  position: relative;
-  height: 100%;
-  width: 100%;
+  @media screen and (max-width: 1500px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.8fr 1.2fr;
+    height: 100%;
+  }
 `;
 
 const ConsuSection02InteractiveArea = styled.div`
@@ -72,27 +68,6 @@ const ConsuSection02InteractiveArea = styled.div`
   height: 100%;
   width: 100%;
   flex-direction: column;
-`;
-
-const ConsuSection02InteractiveAreaButton = styled.button`
-  background-color: #5d5a88;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  width: 97%;
-  height: 5vh;
-  font-size: clamp(0.75rem, 0.381rem + 0.985vw, 1.563rem);
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  cursor: pointer;
-  transition: 0.3s;
-  &:hover {
-    background-color: #9795b5;
-  }
 `;
 
 function Consulta() {
@@ -114,11 +89,6 @@ function Consulta() {
             receba alertas de enchentes em nosso portal de consulta climática.
             Esteja preparado e mantenha-se seguro.
           </ConsuSection01P>
-          <ConsuSection01P>
-            Essa pagina está sob manutenção, sua atividade será normalizada a
-            partir do dia 26/09/2023, por enquanto somente a pesquisa de
-            endereço está disponivel!
-          </ConsuSection01P>
         </ConsuSection01Texto>
       </ConsuSection01>
       <ConsuSection02>
@@ -126,13 +96,11 @@ function Consulta() {
           styled={{ width: "500px" }}
           onLocationSelect={handleLocationSelect}
         />
-        <ConsuSection02InteractiveArea>
           {selectedLocation && (
             <ConsuSection02InteractiveArea>
               <ObterInfo localizacao={selectedLocation} />
             </ConsuSection02InteractiveArea>
           )}
-        </ConsuSection02InteractiveArea>
       </ConsuSection02>
     </div>
   );
