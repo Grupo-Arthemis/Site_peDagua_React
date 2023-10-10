@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ApoioriaCards from './Apoio-cards';
+import ApoioCarrossel from './Apoio-carrossel'
 import React from "react";
 
 import Foto_1 from '../../assets/projetosSociais/Foto (1).jpg';
@@ -129,11 +130,12 @@ function Apoio() {
     
     return (
         <div className="Perguntas">
-            <ApoioSection01>
+            <ApoioSection01 style={{margin: "0 auto"}}>
                 <ApoioSection01Texto>
                     <ApoioSection01H1>Saiba onde apoiar</ApoioSection01H1> 
                     <ApoioSection01P>Mesmo durante os momentos dificeis, a luz da esperança não pode ser apagada, saiba como ajudar:</ApoioSection01P>
                 </ApoioSection01Texto>
+                <ApoioCarrossel />
                 <ApoioSection01Cards>
 
 
